@@ -7,11 +7,8 @@
 [ext_resource path="res://Scripts/TitleScreen.gd" type="Script" id=5]
 [ext_resource path="res://Sounds/ui/house_buy.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/graphics_v2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/for_sale.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Generated Resources/ui_theme.tres" type="Theme" id=11]
-
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 7 )
-region = Rect2( 71, 8, 51, 17 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 7 )
@@ -27,7 +24,7 @@ centered = false
 
 [node name="Sprite" type="Sprite" parent="BG"]
 position = Vector2( 254, 83 )
-texture = SubResource( 1 )
+texture = ExtResource( 8 )
 
 [node name="Sprite2" type="Sprite" parent="BG"]
 position = Vector2( 254, 110 )

@@ -4,6 +4,7 @@
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Cloud.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/for_sale.png" type="Texture" id=5]
 [ext_resource path="res://Assets/graphics_v2.png" type="Texture" id=22]
 [ext_resource path="res://Scenes/CountdownTimer.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Assets/Generated Resources/Gravity8.tres" type="DynamicFont" id=27]
@@ -65,10 +66,6 @@
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
-
-[sub_resource type="AtlasTexture" id=44]
-atlas = ExtResource( 22 )
-region = Rect2( 64, 0, 64, 32 )
 
 [sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 8.5, 8.5 )
@@ -274,11 +271,11 @@ max_price = 30000
 min_price = 29950
 
 [node name="Sprite" parent="Mountain/ForSale" index="0"]
-position = Vector2( -9, -9 )
-texture = SubResource( 44 )
+position = Vector2( -2, -1 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" parent="Mountain/ForSale/Sprite/Area2D" index="0"]
-position = Vector2( 32.5, 16.5 )
+position = Vector2( 25.5, 8.5 )
 scale = Vector2( 3, 1 )
 shape = SubResource( 26 )
 
