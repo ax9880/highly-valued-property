@@ -24,7 +24,7 @@ config/name="Highly Valued Property"
 run/main_scene="res://Scenes/TitleScreen.tscn"
 boot_splash/image="res://Assets/banner-export.png"
 boot_splash/use_filter=false
-config/icon="res://Assets/Houses/ringo_stand.png"
+config/icon="res://Assets/icon256.png"
 
 [audio]
 
@@ -65,7 +65,7 @@ ui_select={
 
 translations=PoolStringArray( "res://Text/text.en.translation", "res://Text/text.es.translation" )
 translation_remaps={
-"res://Assets/Houses/for_sale.png": PoolStringArray( "res://Assets/Houses/for_sale.png:en", "res://Assets/Houses/for_sale_es.png:es" )
+"res://Assets/for_sale.png": PoolStringArray( "res://Assets/for_sale.png:en", "res://Assets/for_sale_es.png:es" )
 }
 
 [physics]
@@ -75,6 +75,11 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 quality/driver/driver_name="GLES2"
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=0
 2d/snapping/use_gpu_pixel_snap=true
+quality/reflections/texture_array_reflections=false
+quality/reflections/high_quality_ggx=false
+quality/depth_prepass/enable=false
 quality/filters/anisotropic_filter_level=1
 quality/dynamic_fonts/use_oversampling=false
