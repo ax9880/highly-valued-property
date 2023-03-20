@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Generated Resources/GravityRegular5.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scenes/VolumeControl.tscn" type="PackedScene" id=2]
@@ -6,9 +6,16 @@
 [ext_resource path="res://Assets/UI/bg.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/TitleScreen.gd" type="Script" id=5]
 [ext_resource path="res://Sounds/ui/house_buy.wav" type="AudioStream" id=6]
-[ext_resource path="res://Assets/Houses/for_sale.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Houses/chimata_market.png" type="Texture" id=10]
+[ext_resource path="res://Assets/graphics_v2.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Generated Resources/ui_theme.tres" type="Theme" id=11]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 7 )
+region = Rect2( 71, 8, 51, 17 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 7 )
+region = Rect2( 132, 228, 56, 27 )
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 1, 0 )
@@ -20,11 +27,11 @@ centered = false
 
 [node name="Sprite" type="Sprite" parent="BG"]
 position = Vector2( 254, 83 )
-texture = ExtResource( 9 )
+texture = SubResource( 1 )
 
 [node name="Sprite2" type="Sprite" parent="BG"]
 position = Vector2( 254, 110 )
-texture = ExtResource( 10 )
+texture = SubResource( 2 )
 
 [node name="Music" type="Node2D" parent="."]
 
@@ -41,9 +48,6 @@ bus = "SoundEffects"
 [node name="Control" type="Control" parent="."]
 margin_right = 320.0
 margin_bottom = 320.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TitleLabel" type="Label" parent="Control"]
 margin_left = 222.0

@@ -1,30 +1,10 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://Scenes/House.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Cloud.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Houses/chimata_market.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Houses/kasen_senkai.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Houses/yamanba_house.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Houses/aki_residence.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Houses/ropeway.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Houses/takane_tent.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Houses/takane_tent2.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Houses/sannyo_den.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Houses/mine_entrance.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Houses/nitori_house.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Houses/great_toad_pond.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Houses/aya_house.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Houses/momiji_watchtower.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Houses/kutaka_house.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Houses/onsen.png" type="Texture" id=19]
-[ext_resource path="res://Assets/Houses/megumu_house.png" type="Texture" id=20]
-[ext_resource path="res://Assets/Houses/hatate_house.png" type="Texture" id=21]
-[ext_resource path="res://Assets/Houses/moriya_residence.png" type="Texture" id=22]
-[ext_resource path="res://Assets/Houses/shining_needle_castle.png" type="Texture" id=23]
-[ext_resource path="res://Assets/Houses/hina_house.png" type="Texture" id=24]
-[ext_resource path="res://Assets/Houses/for_sale.png" type="Texture" id=25]
+[ext_resource path="res://Assets/graphics_v2.png" type="Texture" id=22]
 [ext_resource path="res://Scenes/CountdownTimer.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Assets/Generated Resources/Gravity8.tres" type="DynamicFont" id=27]
 [ext_resource path="res://Assets/Generated Resources/GravityRegular5.tres" type="DynamicFont" id=28]
@@ -86,6 +66,150 @@
 0/shapes = [  ]
 0/z_index = 0
 
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 22 )
+region = Rect2( 64, 0, 64, 32 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 8.5, 8.5 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 22 )
+region = Rect2( 0, 0, 48, 48 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 8.4, 8.91304 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 22 )
+region = Rect2( 128, 0, 48, 64 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 8.18182, 9.38338 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 22 )
+region = Rect2( 0, 48, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 22 )
+region = Rect2( 48, 96, 32, 48 )
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 8.35821, 9.04737 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 22 )
+region = Rect2( 0, 96, 48, 48 )
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 7.65957, 9.48317 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 22 )
+region = Rect2( 48, 64, 48, 32 )
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 8.14815, 9.14286 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 22 )
+region = Rect2( 48, 0, 16, 48 )
+
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 8, 8.91892 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 22 )
+region = Rect2( 80, 96, 48, 48 )
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 9.17852, 9.3633 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 22 )
+region = Rect2( 0, 144, 48, 48 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 8.08152, 9.00423 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 22 )
+region = Rect2( 48, 144, 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=33]
+extents = Vector2( 8.25206, 9.487 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 22 )
+region = Rect2( 80, 144, 32, 40 )
+
+[sub_resource type="RectangleShape2D" id=34]
+extents = Vector2( 8.54244, 9.7629 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 22 )
+region = Rect2( 128, 192, 48, 32 )
+
+[sub_resource type="RectangleShape2D" id=35]
+extents = Vector2( 12.572, 10.7639 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 22 )
+region = Rect2( 16, 200, 32, 40 )
+
+[sub_resource type="RectangleShape2D" id=36]
+extents = Vector2( 8.30189, 9.04069 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 22 )
+region = Rect2( 0, 200, 16, 24 )
+
+[sub_resource type="RectangleShape2D" id=37]
+extents = Vector2( 8.44391, 9.68014 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 22 )
+region = Rect2( 48, 216, 32, 40 )
+
+[sub_resource type="RectangleShape2D" id=38]
+extents = Vector2( 9.0566, 8.53842 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 22 )
+region = Rect2( 80, 184, 48, 56 )
+
+[sub_resource type="RectangleShape2D" id=39]
+extents = Vector2( 8.4, 9.4 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 22 )
+region = Rect2( 48, 184, 32, 24 )
+
+[sub_resource type="RectangleShape2D" id=40]
+extents = Vector2( 11, 10 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 22 )
+region = Rect2( 128, 120, 48, 40 )
+
+[sub_resource type="RectangleShape2D" id=41]
+extents = Vector2( 8.71873, 8.62896 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 22 )
+region = Rect2( 128, 224, 64, 32 )
+
+[sub_resource type="RectangleShape2D" id=42]
+extents = Vector2( 8.07382, 9.64974 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 22 )
+region = Rect2( 144, 160, 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=43]
+extents = Vector2( 8.46963, 8.94569 )
+
 [node name="Level" type="Node2D"]
 script = ExtResource( 3 )
 
@@ -139,9 +263,6 @@ patch_margin_right = 8
 patch_margin_bottom = 8
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Mountain" type="Node2D" parent="."]
 
@@ -153,12 +274,13 @@ max_price = 30000
 min_price = 29950
 
 [node name="Sprite" parent="Mountain/ForSale" index="0"]
-position = Vector2( -2, -1 )
-texture = ExtResource( 25 )
+position = Vector2( -9, -9 )
+texture = SubResource( 44 )
 
 [node name="CollisionShape2D" parent="Mountain/ForSale/Sprite/Area2D" index="0"]
-position = Vector2( 25, 8 )
+position = Vector2( 32.5, 16.5 )
 scale = Vector2( 3, 1 )
+shape = SubResource( 26 )
 
 [node name="Label" parent="Mountain/ForSale" index="1"]
 margin_left = 15.0
@@ -195,11 +317,12 @@ max_price = 8300
 min_price = 4000
 
 [node name="Sprite" parent="Floors/Floor6/MoriyaHouse" index="0"]
-texture = ExtResource( 22 )
+texture = SubResource( 3 )
 
 [node name="CollisionShape2D" parent="Floors/Floor6/MoriyaHouse/Sprite/Area2D" index="0"]
-position = Vector2( 21, 22 )
+position = Vector2( 24, 26.5 )
 scale = Vector2( 2.5, 2.3 )
+shape = SubResource( 25 )
 
 [node name="Label" parent="Floors/Floor6/MoriyaHouse" index="1"]
 margin_left = -33.0
@@ -218,11 +341,12 @@ max_price = 8000
 min_price = 3800
 
 [node name="Sprite" parent="Floors/Floor6/ShiningNeedleCastle" index="0"]
-texture = ExtResource( 23 )
+texture = SubResource( 4 )
 
 [node name="CollisionShape2D" parent="Floors/Floor6/ShiningNeedleCastle/Sprite/Area2D" index="0"]
-position = Vector2( 19, 31 )
+position = Vector2( 24, 32.5 )
 scale = Vector2( 2.2, 3.357 )
+shape = SubResource( 24 )
 
 [node name="Label" parent="Floors/Floor6/ShiningNeedleCastle" index="1"]
 margin_left = -6.0
@@ -243,11 +367,11 @@ max_price = 8600
 min_price = 5200
 
 [node name="Sprite" parent="Floors/Floor5/MegumuHouse" index="0"]
-position = Vector2( -2, -1 )
-texture = ExtResource( 20 )
+position = Vector2( -8, -12 )
+texture = SubResource( 5 )
 
 [node name="CollisionShape2D" parent="Floors/Floor5/MegumuHouse/Sprite/Area2D" index="0"]
-position = Vector2( 18, 17 )
+position = Vector2( 24, 31 )
 scale = Vector2( 2, 1.87 )
 
 [node name="Label" parent="Floors/Floor5/MegumuHouse" index="1"]
@@ -267,11 +391,13 @@ max_price = 2300
 min_price = 1100
 
 [node name="Sprite" parent="Floors/Floor5/HatateHouse" index="0"]
-texture = ExtResource( 21 )
+position = Vector2( 0, -18 )
+texture = SubResource( 7 )
 
 [node name="CollisionShape2D" parent="Floors/Floor5/HatateHouse/Sprite/Area2D" index="0"]
-position = Vector2( 15, 17 )
+position = Vector2( 14, 31 )
 scale = Vector2( 1.675, 1.879 )
+shape = SubResource( 29 )
 
 [node name="Label" parent="Floors/Floor5/HatateHouse" index="1"]
 margin_left = 5.0
@@ -292,12 +418,13 @@ max_price = 2300
 min_price = 1300
 
 [node name="Sprite" parent="Floors/Floor4/AyaHouse" index="0"]
-position = Vector2( 2, -5 )
-texture = ExtResource( 16 )
+position = Vector2( -12, -13 )
+texture = SubResource( 8 )
 
 [node name="CollisionShape2D" parent="Floors/Floor4/AyaHouse/Sprite/Area2D" index="0"]
-position = Vector2( 10, 21 )
+position = Vector2( 24, 28 )
 scale = Vector2( 1.175, 2.109 )
+shape = SubResource( 27 )
 
 [node name="Label" parent="Floors/Floor4/AyaHouse" index="1"]
 margin_left = 0.0
@@ -316,11 +443,13 @@ max_price = 6300
 min_price = 3100
 
 [node name="Sprite" parent="Floors/Floor4/KutakaHouse" index="0"]
-texture = ExtResource( 18 )
+position = Vector2( -2, -1 )
+texture = SubResource( 11 )
 
 [node name="CollisionShape2D" parent="Floors/Floor4/KutakaHouse/Sprite/Area2D" index="0"]
-position = Vector2( 22, 16 )
+position = Vector2( 24, 16 )
 scale = Vector2( 2.7, 1.75 )
+shape = SubResource( 31 )
 
 [node name="Label" parent="Floors/Floor4/KutakaHouse" index="1"]
 margin_left = 14.0
@@ -338,11 +467,13 @@ max_price = 800
 min_price = 300
 
 [node name="Sprite" parent="Floors/Floor4/MomijiWatchtower" index="0"]
-texture = ExtResource( 17 )
+position = Vector2( 0, -21 )
+texture = SubResource( 9 )
 
 [node name="CollisionShape2D" parent="Floors/Floor4/MomijiWatchtower/Sprite/Area2D" index="0"]
-position = Vector2( 8, 17 )
+position = Vector2( 8, 31.5 )
 scale = Vector2( 1, 1.85 )
+shape = SubResource( 30 )
 
 [node name="Label" parent="Floors/Floor4/MomijiWatchtower" index="1"]
 margin_top = 21.0
@@ -359,11 +490,13 @@ max_price = 1900
 min_price = 1000
 
 [node name="Sprite" parent="Floors/Floor4/Onsen" index="0"]
-texture = ExtResource( 19 )
+position = Vector2( -5, -15 )
+texture = SubResource( 10 )
 
 [node name="CollisionShape2D" parent="Floors/Floor4/Onsen/Sprite/Area2D" index="0"]
-position = Vector2( 20, 17 )
+position = Vector2( 25, 31.5 )
 scale = Vector2( 2.179, 1.869 )
+shape = SubResource( 32 )
 
 [node name="Label" parent="Floors/Floor4/Onsen" index="1"]
 margin_left = 22.0
@@ -384,11 +517,13 @@ max_price = 2100
 min_price = 1300
 
 [node name="Sprite" parent="Floors/Floor3/SannyoDen" index="0"]
-texture = ExtResource( 12 )
+position = Vector2( -2, -20 )
+texture = SubResource( 12 )
 
 [node name="CollisionShape2D" parent="Floors/Floor3/SannyoDen/Sprite/Area2D" index="0"]
-position = Vector2( 23, 17 )
+position = Vector2( 24, 31 )
 scale = Vector2( 2.846, 1.888 )
+shape = SubResource( 28 )
 
 [node name="Label" parent="Floors/Floor3/SannyoDen" index="1"]
 margin_left = 7.0
@@ -405,11 +540,13 @@ id = "dragon"
 min_price = 300
 
 [node name="Sprite" parent="Floors/Floor3/DragonMine" index="0"]
-texture = ExtResource( 13 )
+position = Vector2( -5, -10 )
+texture = SubResource( 13 )
 
 [node name="CollisionShape2D" parent="Floors/Floor3/DragonMine/Sprite/Area2D" index="0"]
-position = Vector2( 11, 13 )
+position = Vector2( 16, 17.5 )
 scale = Vector2( 1.333, 1.423 )
+shape = SubResource( 33 )
 
 [node name="Label" parent="Floors/Floor3/DragonMine" index="1"]
 margin_top = -9.0
@@ -427,11 +564,13 @@ max_price = 1600
 min_price = 600
 
 [node name="Sprite" parent="Floors/Floor3/NitoriHouse" index="0"]
-texture = ExtResource( 14 )
+position = Vector2( 0, -13 )
+texture = SubResource( 14 )
 
 [node name="CollisionShape2D" parent="Floors/Floor3/NitoriHouse/Sprite/Area2D" index="0"]
-position = Vector2( 15, 13 )
+position = Vector2( 16, 20 )
 scale = Vector2( 1.873, 1.434 )
+shape = SubResource( 34 )
 
 [node name="Label" parent="Floors/Floor3/NitoriHouse" index="1"]
 margin_left = 11.0
@@ -449,11 +588,13 @@ max_price = 800
 min_price = 300
 
 [node name="Sprite" parent="Floors/Floor3/GreatToadPond" index="0"]
-texture = ExtResource( 15 )
+position = Vector2( 0, -7 )
+texture = SubResource( 15 )
 
 [node name="CollisionShape2D" parent="Floors/Floor3/GreatToadPond/Sprite/Area2D" index="0"]
-position = Vector2( 24, 14 )
+position = Vector2( 24, 16.5 )
 scale = Vector2( 1.909, 1.44 )
+shape = SubResource( 35 )
 
 [node name="Label" parent="Floors/Floor3/GreatToadPond" index="1"]
 margin_left = 22.0
@@ -473,11 +614,13 @@ id = "takane"
 max_price = 1600
 
 [node name="Sprite" parent="Floors/Floor2/TakaneTent2" index="0"]
-texture = ExtResource( 11 )
+position = Vector2( -5, -9 )
+texture = SubResource( 17 )
 
 [node name="CollisionShape2D" parent="Floors/Floor2/TakaneTent2/Sprite/Area2D" index="0"]
-position = Vector2( 11, 18 )
+position = Vector2( 16, 22 )
 scale = Vector2( 1.325, 1.991 )
+shape = SubResource( 36 )
 
 [node name="Label" parent="Floors/Floor2/TakaneTent2" index="1"]
 margin_left = -5.0
@@ -495,11 +638,12 @@ max_price = 400
 min_price = 50
 
 [node name="Sprite" parent="Floors/Floor2/TakaneTent" index="0"]
-texture = ExtResource( 10 )
+texture = SubResource( 16 )
 
 [node name="CollisionShape2D" parent="Floors/Floor2/TakaneTent/Sprite/Area2D" index="0"]
-position = Vector2( 7, 12 )
+position = Vector2( 8, 12.5 )
 scale = Vector2( 0.829, 1.188 )
+shape = SubResource( 37 )
 
 [node name="Label" parent="Floors/Floor2/TakaneTent" index="1"]
 margin_left = 11.0
@@ -518,11 +662,13 @@ max_price = 1500
 min_price = 600
 
 [node name="Sprite" parent="Floors/Floor2/HinaHouse" index="0"]
-texture = ExtResource( 24 )
+position = Vector2( -4, -11 )
+texture = SubResource( 18 )
 
 [node name="CollisionShape2D" parent="Floors/Floor2/HinaHouse/Sprite/Area2D" index="0"]
-position = Vector2( 13, 20 )
+position = Vector2( 16, 23 )
 scale = Vector2( 1.325, 1.991 )
+shape = SubResource( 38 )
 
 [node name="Label" parent="Floors/Floor2/HinaHouse" index="1"]
 margin_left = 3.0
@@ -541,11 +687,13 @@ max_price = 6500
 min_price = 3500
 
 [node name="Sprite" parent="Floors/Floor2/KasenSenkai" index="0"]
-texture = ExtResource( 6 )
+position = Vector2( -3, -8 )
+texture = SubResource( 19 )
 
 [node name="CollisionShape2D" parent="Floors/Floor2/KasenSenkai/Sprite/Area2D" index="0"]
-position = Vector2( 21, 29 )
+position = Vector2( 24, 32.5 )
 scale = Vector2( 2.5, 2.5 )
+shape = SubResource( 39 )
 
 [node name="Label" parent="Floors/Floor2/KasenSenkai" index="1"]
 margin_left = 24.0
@@ -563,16 +711,18 @@ max_price = 350
 min_price = 75
 
 [node name="Sprite" parent="Floors/Floor2/NemunoHouse" index="0"]
-texture = ExtResource( 7 )
+position = Vector2( 0, -9 )
+texture = SubResource( 20 )
 
 [node name="CollisionShape2D" parent="Floors/Floor2/NemunoHouse/Sprite/Area2D" index="0"]
-position = Vector2( 11, 11 )
+position = Vector2( 16, 14 )
+shape = SubResource( 40 )
 
 [node name="Label" parent="Floors/Floor2/NemunoHouse" index="1"]
 margin_left = 8.0
-margin_top = -1.0
+margin_top = -3.0
 margin_right = 33.0
-margin_bottom = 4.0
+margin_bottom = 3.0
 
 [node name="ArrowSprite" parent="Floors/Floor2/NemunoHouse/Label" index="2"]
 frame = 1
@@ -586,14 +736,16 @@ max_price = 900
 min_price = 300
 
 [node name="Sprite" parent="Floors/Floor1/Ropeway" index="0"]
-texture = ExtResource( 9 )
+position = Vector2( -1, -10 )
+texture = SubResource( 21 )
 
 [node name="Area2D" parent="Floors/Floor1/Ropeway/Sprite" index="0"]
 position = Vector2( 14, 6 )
 
 [node name="CollisionShape2D" parent="Floors/Floor1/Ropeway/Sprite/Area2D" index="0"]
-position = Vector2( 11, 11 )
+position = Vector2( 11, 16 )
 scale = Vector2( 2.638, 2.086 )
+shape = SubResource( 41 )
 
 [node name="Label" parent="Floors/Floor1/Ropeway" index="1"]
 margin_left = 19.0
@@ -612,11 +764,13 @@ max_price = 5000
 min_price = 3000
 
 [node name="Sprite" parent="Floors/Floor1/ChimataMarket" index="0"]
-texture = ExtResource( 5 )
+position = Vector2( -4, -10 )
+texture = SubResource( 22 )
 
 [node name="CollisionShape2D" parent="Floors/Floor1/ChimataMarket/Sprite/Area2D" index="0"]
-position = Vector2( 28, 14 )
+position = Vector2( 32, 17.5 )
 scale = Vector2( 3.468, 1.399 )
+shape = SubResource( 42 )
 
 [node name="Label" parent="Floors/Floor1/ChimataMarket" index="1"]
 margin_left = 19.0
@@ -634,11 +788,13 @@ max_price = 450
 min_price = 125
 
 [node name="Sprite" parent="Floors/Floor1/AkiResidence" index="0"]
-texture = ExtResource( 8 )
+position = Vector2( -1, -10 )
+texture = SubResource( 23 )
 
 [node name="CollisionShape2D" parent="Floors/Floor1/AkiResidence/Sprite/Area2D" index="0"]
-position = Vector2( 15, 14 )
+position = Vector2( 15.5, 18 )
 scale = Vector2( 1.712, 1.565 )
+shape = SubResource( 43 )
 
 [node name="Label" parent="Floors/Floor1/AkiResidence" index="1"]
 margin_left = -1.0
@@ -654,6 +810,9 @@ position = Vector2( 176, 291 )
 id = "ringo"
 max_price = 400
 min_price = 100
+
+[node name="Sprite" parent="Floors/Floor1/RingoStand" index="0"]
+position = Vector2( 0, -12 )
 
 [node name="Label" parent="Floors/Floor1/RingoStand" index="1"]
 margin_left = 0.0

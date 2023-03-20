@@ -1,11 +1,9 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/House.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Houses/ringo_stand.png" type="Texture" id=2]
+[ext_resource path="res://Assets/graphics_v2.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Generated Resources/GravityRegular5.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/UI/ryou.png" type="Texture" id=4]
-[ext_resource path="res://Assets/UI/arrow_up.png" type="Texture" id=5]
-[ext_resource path="res://Assets/UI/arrow_down.png" type="Texture" id=6]
 [ext_resource path="res://Sounds/ui/house_list.wav" type="AudioStream" id=7]
 [ext_resource path="res://Sounds/ui/house_gone.wav" type="AudioStream" id=8]
 [ext_resource path="res://Assets/UI/gold_patch.png" type="Texture" id=9]
@@ -13,28 +11,46 @@
 [ext_resource path="res://Sounds/ui/house_loss.wav" type="AudioStream" id=11]
 [ext_resource path="res://Sounds/ui/house_sell.wav" type="AudioStream" id=12]
 
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 128, 168, 16, 24 )
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 9 )
 
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 176, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 184, 0, 8, 8 )
+
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
-"loop": true,
+"frames": [ SubResource( 4 ), SubResource( 5 ) ],
+"loop": false,
 "name": "default",
-"speed": 60.0
+"speed": 12.0
 } ]
 
 [node name="House" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+position = Vector2( 0, -6 )
+texture = SubResource( 3 )
 centered = false
 
 [node name="Area2D" type="Area2D" parent="Sprite"]
+collision_mask = 0
+monitoring = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
-position = Vector2( 8, 9 )
+position = Vector2( 8, 15 )
 shape = SubResource( 1 )
 
 [node name="Label" type="Label" parent="."]
@@ -46,9 +62,6 @@ custom_fonts/font = ExtResource( 3 )
 text = "99999"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Label"]
 show_behind_parent = true
@@ -61,11 +74,6 @@ patch_margin_left = 8
 patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="CurrencySprite" type="Sprite" parent="Label"]
 visible = false
@@ -73,7 +81,7 @@ position = Vector2( 29, 11 )
 texture = ExtResource( 4 )
 
 [node name="ArrowSprite" type="AnimatedSprite" parent="Label"]
-position = Vector2( -5, 2 )
+position = Vector2( -4, 3 )
 frames = SubResource( 2 )
 
 [node name="Tween" type="Tween" parent="."]
@@ -83,6 +91,7 @@ wait_time = 15.0
 one_shot = true
 
 [node name="Sounds" type="Node2D" parent="."]
+visible = false
 
 [node name="SoundBuy" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 10 )

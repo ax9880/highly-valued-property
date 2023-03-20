@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/for_sale_es.png-9fdf4ec4f057872922db652f216686a5.stex"
+path="res://.import/graphics_v2.png-3ef702ec338f963494ab3d006bd6a398.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Houses/for_sale_es.png"
-dest_files=[ "res://.import/for_sale_es.png-9fdf4ec4f057872922db652f216686a5.stex" ]
+source_file="res://Assets/graphics_v2.png"
+dest_files=[ "res://.import/graphics_v2.png-3ef702ec338f963494ab3d006bd6a398.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true
