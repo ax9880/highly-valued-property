@@ -30,6 +30,7 @@ onready var mid_timer_wait_time = $Timers/MidTimer.wait_time
 onready var high_timer_wait_time = $Timers/HighTimer.wait_time
 
 onready var player = $Player
+onready var player_money_label: Label = $Control/Money
 
 var delay_timer_threshold = 1.5
 var timer_jitter = 2
@@ -40,6 +41,7 @@ var time_now = 0
 
 var all_houses = []
 var assets = 0
+
 
 # -----------------------------------------------------------------------------#
 # Initialization
@@ -89,12 +91,8 @@ func _disconnect_house_signals(houses: Array) -> void:
 # Process
 # -----------------------------------------------------------------------------#
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	_set_player_money_label()
-
-
-func _set_player_money_label():
-	$Control/Money.set_text("%s:\n%4d" % [tr("MONEY"), player.current_money])
+func _process(_delta: float) -> void:
+	player_money_label.set_text("%s:\n%4d" % [tr("MONEY"), player.current_money])
 
 
 func _on_mouse_house_hover(id: String):
