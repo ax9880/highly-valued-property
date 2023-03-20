@@ -84,7 +84,7 @@ func _ready():
 func _process(delta):
 	if listing_status == HouseStatus.Listing.delisting:
 		return
-		
+	
 	price_label.text = "%4d" % current_price
 	
 	if previous_price > current_price:
@@ -101,7 +101,7 @@ func _process(delta):
 # -----------------------------------------------------------------------------#
 # Price function
 # -----------------------------------------------------------------------------#
-func _update_house_price(delta):
+func _update_house_price(delta: float):
 	elapsed_time += delta * current_time_modifier
 	
 	previous_price = current_price
@@ -154,7 +154,7 @@ func _on_Area2D_input_event(_viewport, _event, _shape_idx):
 	
 	if (Input.is_action_just_pressed("ui_select")):
 		# Comparing it to the exact millisecond seems too tight, but
-		# it works fine in thise case
+		# it works fine in this case
 		# I'm unsure why this happens
 		# It happens with both mouse pad and regular mouse
 		if OS.get_ticks_msec() == click_time:
@@ -275,6 +275,8 @@ func list_house():
 	
 	base_price = 0
 	elapsed_time = 0 # this?
+	
+	set_process(true)
 
 
 func delist_house():
@@ -288,6 +290,8 @@ func delist_house():
 	current_time_modifier = time_modifier
 	
 	emit_signal("delisted", self)
+	
+	set_process(false)
 
 # -----------------------------------------------------------------------------#
 # Automatic delisting
@@ -297,6 +301,7 @@ func _on_DelistingTimer_timeout():
 	tween.interpolate_property(self, "current_time_modifier",
 			null, 0, 2,
 			Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+	
 	tween.start()
 
 
