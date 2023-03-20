@@ -1,0 +1,170 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/Generated Resources/GravityRegular5.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scenes/VolumeControl.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Generated Resources/Gravity8.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/UI/bg.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/TitleScreen.gd" type="Script" id=5]
+[ext_resource path="res://Sounds/ui/house_buy.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Houses/for_sale.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Houses/chimata_market.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Generated Resources/ui_theme.tres" type="Theme" id=11]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 1, 0 )
+script = ExtResource( 5 )
+
+[node name="BG" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="BG"]
+position = Vector2( 254, 83 )
+texture = ExtResource( 9 )
+
+[node name="Sprite2" type="Sprite" parent="BG"]
+position = Vector2( 254, 110 )
+texture = ExtResource( 10 )
+
+[node name="Music" type="Node2D" parent="."]
+
+[node name="SongStart" type="AudioStreamPlayer" parent="Music"]
+volume_db = -9.0
+autoplay = true
+
+[node name="ClickEffect" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource( 6 )
+bus = "SoundEffects"
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Control" type="Control" parent="."]
+margin_right = 320.0
+margin_bottom = 320.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLabel" type="Label" parent="Control"]
+margin_left = 222.0
+margin_top = 25.0
+margin_right = 285.0
+margin_bottom = 61.0
+custom_fonts/font = ExtResource( 3 )
+text = "Highly
+    valued
+ property"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Explanation" type="Label" parent="Control"]
+margin_left = 16.0
+margin_top = 17.0
+margin_right = 196.0
+margin_bottom = 141.0
+custom_fonts/font = ExtResource( 1 )
+text = "EXPLANATION"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Toggle" type="Label" parent="Control"]
+margin_left = 174.0
+margin_top = 300.0
+margin_right = 270.0
+margin_bottom = 309.0
+custom_fonts/font = ExtResource( 1 )
+text = "TOGGLE"
+align = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsLabel" type="Label" parent="Control"]
+modulate = Color( 0.721569, 0.756863, 0.835294, 1 )
+margin_left = 7.0
+margin_top = 232.0
+margin_right = 119.0
+margin_bottom = 285.0
+custom_fonts/font = ExtResource( 1 )
+text = "ASSETS_CREDITS"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeveloperInfo" type="Label" parent="Control"]
+modulate = Color( 0.721569, 0.756863, 0.835294, 1 )
+margin_left = 199.0
+margin_top = 232.0
+margin_right = 311.0
+margin_bottom = 288.0
+custom_fonts/font = ExtResource( 1 )
+text = "DEVELOPER_CREDITS"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="Control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -27.0
+margin_top = -120.0
+margin_right = 29.0
+margin_bottom = -96.0
+theme = ExtResource( 11 )
+text = "START"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" type="Button" parent="Control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -27.0
+margin_top = -89.0
+margin_right = 29.0
+margin_bottom = -73.0
+theme = ExtResource( 11 )
+text = "QUIT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LanguageOptions" type="OptionButton" parent="Control"]
+margin_left = 15.0
+margin_top = 296.0
+margin_right = 79.0
+margin_bottom = 312.0
+theme = ExtResource( 11 )
+custom_fonts/font = ExtResource( 1 )
+text = "English"
+items = [ "English", null, false, 0, null, "Español", null, false, 1, null ]
+selected = 0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="VolumeControl" parent="Control" instance=ExtResource( 2 )]
+margin_left = 274.0
+margin_top = 298.0
+margin_right = 274.0
+margin_bottom = 298.0
+
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
+[connection signal="pressed" from="Control/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="Control/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="item_selected" from="Control/LanguageOptions" to="." method="_on_LanguageOptions_item_selected"]

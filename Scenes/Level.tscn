@@ -1,0 +1,1004 @@
+[gd_scene load_steps=42 format=2]
+
+[ext_resource path="res://Scenes/House.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Cloud.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Houses/chimata_market.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Houses/kasen_senkai.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Houses/yamanba_house.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Houses/aki_residence.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Houses/ropeway.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Houses/takane_tent.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Houses/takane_tent2.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Houses/sannyo_den.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Houses/mine_entrance.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Houses/nitori_house.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Houses/great_toad_pond.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Houses/aya_house.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Houses/momiji_watchtower.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Houses/kutaka_house.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Houses/onsen.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Houses/megumu_house.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Houses/hatate_house.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Houses/moriya_residence.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Houses/shining_needle_castle.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Houses/hina_house.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Houses/for_sale.png" type="Texture" id=25]
+[ext_resource path="res://Scenes/CountdownTimer.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Assets/Generated Resources/Gravity8.tres" type="DynamicFont" id=27]
+[ext_resource path="res://Assets/Generated Resources/GravityRegular5.tres" type="DynamicFont" id=28]
+[ext_resource path="res://Assets/Map/mountain_tilemap.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Map/sky_bg.png" type="Texture" id=30]
+[ext_resource path="res://Assets/UI/frame.png" type="Texture" id=31]
+[ext_resource path="res://Assets/UI/gold_patch_transparent.png" type="Texture" id=32]
+[ext_resource path="res://Assets/UI/ryou.png" type="Texture" id=33]
+[ext_resource path="res://Scenes/Bird.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Assets/UI/gold_patch_opaque.png" type="Texture" id=35]
+[ext_resource path="res://Sounds/ui/buy_mountain.wav" type="AudioStream" id=36]
+[ext_resource path="res://Sounds/ui/game_over.wav" type="AudioStream" id=37]
+[ext_resource path="res://Scenes/VolumeControl.tscn" type="PackedScene" id=39]
+[ext_resource path="res://Assets/Generated Resources/ui_theme.tres" type="Theme" id=40]
+
+[sub_resource type="TileSet" id=1]
+0/name = "sky_bg.png 0"
+0/texture = ExtResource( 30 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 48, 48 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 16, 16 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="TileSet" id=2]
+0/name = "mountain_tilemap.png 0"
+0/texture = ExtResource( 29 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 48, 48 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 8, 8 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 13, 9 )
+current_money = 99999
+
+[node name="LevelGraphics" type="Node2D" parent="."]
+
+[node name="SkyTileMap" type="TileMap" parent="LevelGraphics"]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 2, 1, 0, 2, 2, 0, 2, 3, 0, 2, 4, 0, 2, 5, 0, 2, 6, 0, 2, 7, 0, 2, 8, 0, 2, 9, 0, 2, 10, 0, 2, 11, 0, 2, 12, 0, 2, 13, 0, 2, 14, 0, 2, 15, 0, 2, 16, 0, 2, 17, 0, 2, 18, 0, 2, 19, 0, 2, 65536, 0, 2, 65537, 0, 2, 65538, 0, 2, 65539, 0, 2, 65540, 0, 2, 65541, 0, 2, 65542, 0, 2, 65543, 0, 2, 65544, 0, 2, 65545, 0, 2, 65546, 0, 2, 65547, 0, 2, 65548, 0, 2, 65549, 0, 2, 65550, 0, 2, 65551, 0, 2, 65552, 0, 2, 65553, 0, 2, 65554, 0, 2, 65555, 0, 2, 131072, 0, 2, 131073, 0, 2, 131074, 0, 2, 131075, 0, 2, 131076, 0, 2, 131077, 0, 2, 131078, 0, 2, 131079, 0, 2, 131080, 0, 2, 131081, 0, 2, 131082, 0, 2, 131083, 0, 2, 131084, 0, 2, 131085, 0, 2, 131086, 0, 2, 131087, 0, 2, 131088, 0, 2, 131089, 0, 2, 131090, 0, 2, 131091, 0, 2, 196608, 0, 2, 196609, 0, 2, 196610, 0, 2, 196611, 0, 2, 196612, 0, 2, 196613, 0, 2, 196614, 0, 2, 196615, 0, 2, 196616, 0, 2, 196617, 0, 2, 196618, 0, 2, 196619, 0, 2, 196620, 0, 2, 196621, 0, 2, 196622, 0, 2, 196623, 0, 2, 196624, 0, 2, 196625, 0, 2, 196626, 0, 2, 196627, 0, 2, 262144, 0, 2, 262145, 0, 2, 262146, 0, 2, 262147, 0, 2, 262148, 0, 2, 262149, 0, 2, 262150, 0, 2, 262151, 0, 2, 262152, 0, 2, 262153, 0, 2, 262154, 0, 2, 262155, 0, 2, 262156, 0, 2, 262157, 0, 2, 262158, 0, 2, 262159, 0, 2, 262160, 0, 2, 262161, 0, 2, 262162, 0, 2, 262163, 0, 2, 327680, 0, 2, 327681, 0, 2, 327682, 0, 2, 327683, 0, 2, 327684, 0, 2, 327685, 0, 2, 327686, 0, 2, 327687, 0, 2, 327688, 0, 2, 327689, 0, 2, 327690, 0, 2, 327691, 0, 2, 327692, 0, 2, 327693, 0, 2, 327694, 0, 2, 327695, 0, 2, 327696, 0, 2, 327697, 0, 2, 327698, 0, 2, 327699, 0, 2, 393216, 0, 2, 393217, 0, 2, 393218, 0, 2, 393219, 0, 2, 393220, 0, 2, 393221, 0, 2, 393222, 0, 2, 393223, 0, 2, 393224, 0, 2, 393225, 0, 2, 393226, 0, 2, 393227, 0, 2, 393228, 0, 2, 393229, 0, 2, 393230, 0, 2, 393231, 0, 2, 393232, 0, 2, 393233, 0, 2, 393234, 0, 2, 393235, 0, 2, 458752, 0, 2, 458753, 0, 2, 458754, 0, 2, 458755, 0, 2, 458756, 0, 2, 458757, 0, 2, 458758, 0, 2, 458759, 0, 2, 458760, 0, 2, 458761, 0, 2, 458762, 0, 2, 458763, 0, 2, 458764, 0, 2, 458765, 0, 2, 458766, 0, 2, 458767, 0, 2, 458768, 0, 2, 458769, 0, 2, 458770, 0, 2, 458771, 0, 2, 524288, 0, 65537, 524289, 0, 65537, 524290, 0, 65537, 524291, 0, 65537, 524292, 0, 65537, 524293, 0, 65537, 524294, 0, 65537, 524295, 0, 65537, 524296, 0, 65537, 524297, 0, 65537, 524298, 0, 65537, 524299, 0, 65537, 524300, 0, 65537, 524301, 0, 65537, 524302, 0, 65537, 524303, 0, 65537, 524304, 0, 65537, 524305, 0, 65537, 524306, 0, 65537, 524307, 0, 65537, 589824, 0, 65537, 589825, 0, 65537, 589826, 0, 65537, 589827, 0, 65537, 589828, 0, 65537, 589829, 0, 65537, 589830, 0, 65537, 589831, 0, 65537, 589832, 0, 65537, 589833, 0, 65537, 589834, 0, 65537, 589835, 0, 65537, 589836, 0, 65537, 589837, 0, 65537, 589838, 0, 65537, 589839, 0, 65537, 589840, 0, 65537, 589841, 0, 65537, 589842, 0, 65537, 589843, 0, 65537, 655360, 0, 131073, 655361, 0, 131073, 655362, 0, 131073, 655363, 0, 131073, 655364, 0, 131073, 655365, 0, 131073, 655366, 0, 131073, 655367, 0, 131073, 655368, 0, 131073, 655369, 0, 131073, 655370, 0, 131073, 655371, 0, 131073, 655372, 0, 131073, 655373, 0, 131073, 655374, 0, 131073, 655375, 0, 131073, 655376, 0, 131073, 655377, 0, 131073, 655378, 0, 131073, 655379, 0, 131073, 720896, 0, 131073, 720897, 0, 131073, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 131073, 720902, 0, 131073, 720903, 0, 131073, 720904, 0, 131073, 720905, 0, 131073, 720906, 0, 131073, 720907, 0, 131073, 720908, 0, 131073, 720909, 0, 131073, 720910, 0, 131073, 720911, 0, 131073, 720912, 0, 131073, 720913, 0, 131073, 720914, 0, 131073, 720915, 0, 131073, 786432, 0, 131073, 786433, 0, 131073, 786434, 0, 131073, 786435, 0, 131073, 786436, 0, 131073, 786437, 0, 131073, 786438, 0, 131073, 786439, 0, 131073, 786440, 0, 131073, 786441, 0, 131073, 786442, 0, 131073, 786443, 0, 131073, 786444, 0, 131073, 786445, 0, 131073, 786446, 0, 131073, 786447, 0, 131073, 786448, 0, 131073, 786449, 0, 131073, 786450, 0, 131073, 786451, 0, 131073, 851968, 0, 131073, 851969, 0, 131073, 851970, 0, 131073, 851971, 0, 131073, 851972, 0, 131073, 851973, 0, 131073, 851974, 0, 131073, 851975, 0, 131073, 851976, 0, 131073, 851977, 0, 131073, 851978, 0, 131073, 851979, 0, 131073, 851980, 0, 131073, 851981, 0, 131073, 851982, 0, 131073, 851983, 0, 131073, 851984, 0, 131073, 851985, 0, 131073, 851986, 0, 131073, 851987, 0, 131073, 917504, 0, 131073, 917505, 0, 131073, 917506, 0, 131073, 917507, 0, 131073, 917508, 0, 131073, 917509, 0, 131073, 917510, 0, 131073, 917511, 0, 131073, 917512, 0, 131073, 917513, 0, 131073, 917514, 0, 131073, 917515, 0, 131073, 917516, 0, 131073, 917517, 0, 131073, 917518, 0, 131073, 917519, 0, 131073, 917520, 0, 131073, 917521, 0, 131073, 917522, 0, 131073, 917523, 0, 131073, 983040, 0, 131073, 983041, 0, 131073, 983042, 0, 131073, 983043, 0, 131073, 983044, 0, 131073, 983045, 0, 131073, 983046, 0, 131073, 983047, 0, 131073, 983048, 0, 131073, 983049, 0, 131073, 983050, 0, 131073, 983051, 0, 131073, 983052, 0, 131073, 983053, 0, 131073, 983054, 0, 131073, 983055, 0, 131073, 983056, 0, 131073, 983057, 0, 131073, 983058, 0, 131073, 983059, 0, 131073, 1048576, 0, 65536, 1048577, 0, 65536, 1048578, 0, 65536, 1048579, 0, 65536, 1048580, 0, 65536, 1048581, 0, 65536, 1048582, 0, 65536, 1048583, 0, 65536, 1048584, 0, 65536, 1048585, 0, 65536, 1048586, 0, 65536, 1048587, 0, 65536, 1048588, 0, 65536, 1048589, 0, 65536, 1048590, 0, 65536, 1048591, 0, 65536, 1048592, 0, 65536, 1048593, 0, 65536, 1048594, 0, 65536, 1048595, 0, 65536, 1114112, 0, 131072, 1114113, 0, 131072, 1114114, 0, 131072, 1114115, 0, 131072, 1114122, 0, 131072, 1114123, 0, 131072, 1114124, 0, 131072, 1114125, 0, 131072, 1114126, 0, 131072, 1114127, 0, 131072, 1114128, 0, 131072, 1114129, 0, 131072, 1114130, 0, 131072, 1114131, 0, 131072, 1179648, 0, 131072, 1179649, 0, 131072, 1179651, 0, 131072, 1179652, 0, 131072, 1179653, 0, 131072, 1179654, 0, 131072, 1179655, 0, 131072, 1179656, 0, 131072, 1179657, 0, 131072, 1179658, 0, 131072, 1179659, 0, 131072, 1179660, 0, 131072, 1179661, 0, 131072, 1179662, 0, 131072, 1179663, 0, 131072, 1179664, 0, 131072, 1179665, 0, 131072, 1179666, 0, 131072, 1179667, 0, 131072, 1245184, 0, 131072, 1245185, 0, 131072, 1245186, 0, 131072, 1245187, 0, 131072, 1245188, 0, 131072, 1245189, 0, 131072, 1245190, 0, 131072, 1245191, 0, 131072, 1245192, 0, 131072, 1245193, 0, 131072, 1245194, 0, 131072, 1245195, 0, 131072, 1245196, 0, 131072, 1245197, 0, 131072, 1245198, 0, 131072, 1245199, 0, 131072, 1245200, 0, 131072, 1245201, 0, 131072, 1245202, 0, 131072, 1245203, 0, 131072 )
+
+[node name="Cloud" parent="LevelGraphics" instance=ExtResource( 4 )]
+
+[node name="Cloud2" parent="LevelGraphics" instance=ExtResource( 4 )]
+tween_time = 20
+
+[node name="Bird" parent="LevelGraphics" instance=ExtResource( 34 )]
+
+[node name="Bird2" parent="LevelGraphics" instance=ExtResource( 34 )]
+
+[node name="Bird3" parent="LevelGraphics" instance=ExtResource( 34 )]
+
+[node name="MountainTileMap" type="TileMap" parent="LevelGraphics"]
+tile_set = SubResource( 2 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( 393225, 0, 65537, 393226, 0, 262144, 393227, 0, 262144, 393228, 0, 262144, 393229, 0, 262144, 393230, 0, 262144, 393231, 0, 262144, 393232, 0, 262144, 393233, 0, 65538, 458761, 0, 196611, 458762, 0, 131072, 458763, 0, 3, 458764, 0, 3, 458765, 0, 3, 458766, 0, 3, 458767, 0, 131072, 458768, 0, 3, 458769, 0, 196612, 524297, 0, 196611, 524298, 0, 3, 524299, 0, 3, 524300, 0, 3, 524301, 0, 3, 524302, 0, 3, 524303, 0, 3, 524304, 0, 3, 524305, 0, 196612, 589833, 0, 65539, 589834, 0, 262147, 589835, 0, 262147, 589836, 0, 262147, 589837, 0, 262147, 589838, 0, 262147, 589839, 0, 262147, 589840, 0, 262147, 589841, 0, 65540, 655369, 0, 262146, 655370, 0, 2, 655371, 0, 2, 655372, 0, 327681, 655373, 0, 2, 655374, 0, 2, 655375, 0, 2, 655376, 0, 327681, 655377, 0, 327680, 720905, 0, 262146, 720906, 0, 2, 720907, 0, 2, 720908, 0, 2, 720909, 0, 2, 720910, 0, 2, 720911, 0, 2, 720912, 0, 2, 720913, 0, 327680, 786439, 0, 65537, 786440, 0, 262144, 786441, 0, 262144, 786442, 0, 262144, 786443, 0, 65538, 786444, 0, 2, 786445, 0, 2, 786446, 0, 2, 786447, 0, 65537, 786448, 0, 262144, 786449, 0, 262144, 786450, 0, 262144, 786451, 0, 65538, 851975, 0, 196611, 851976, 0, 3, 851977, 0, 3, 851978, 0, 3, 851979, 0, 196612, 851980, 0, 2, 851981, 0, 327682, 851982, 0, 2, 851983, 0, 196611, 851984, 0, 3, 851985, 0, 3, 851986, 0, 3, 851987, 0, 196612, 917511, 0, 196611, 917512, 0, 3, 917513, 0, 3, 917514, 0, 3, 917515, 0, 196612, 917516, 0, 327681, 917517, 0, 2, 917518, 0, 2, 917519, 0, 196611, 917520, 0, 3, 917521, 0, 3, 917522, 0, 3, 917523, 0, 196612, 983047, 0, 65539, 983048, 0, 262147, 983049, 0, 262147, 983050, 0, 262147, 983051, 0, 65540, 983052, 0, 262148, 983053, 0, 262148, 983054, 0, 262148, 983055, 0, 65539, 983056, 0, 262147, 983057, 0, 262147, 983058, 0, 262147, 983059, 0, 65540, 1048580, 0, 65537, 1048581, 0, 262144, 1048582, 0, 262144, 1048583, 0, 262146, 1048584, 0, 327681, 1048585, 0, 2, 1048586, 0, 2, 1048587, 0, 327680, 1048588, 0, 3, 1048589, 0, 3, 1048590, 0, 3, 1048591, 0, 262146, 1048592, 0, 2, 1048593, 0, 327681, 1048594, 0, 2, 1048595, 0, 327680, 1048596, 0, 262144, 1048597, 0, 262144, 1048598, 0, 65538, 1114116, 0, 196611, 1114117, 0, 3, 1114118, 0, 3, 1114119, 0, 131075, 1114120, 0, 262148, 1114121, 0, 262148, 1114122, 0, 262148, 1114123, 0, 131076, 1114124, 0, 3, 1114125, 0, 3, 1114126, 0, 3, 1114127, 0, 131075, 1114128, 0, 262148, 1114129, 0, 262148, 1114130, 0, 262148, 1114131, 0, 131076, 1114132, 0, 3, 1114133, 0, 3, 1114134, 0, 196612, 1179652, 0, 196611, 1179653, 0, 3, 1179654, 0, 3, 1179655, 0, 3, 1179656, 0, 3, 1179657, 0, 3, 1179658, 0, 3, 1179659, 0, 3, 1179660, 0, 3, 1179661, 0, 3, 1179662, 0, 3, 1179663, 0, 3, 1179664, 0, 3, 1179665, 0, 3, 1179666, 0, 3, 1179667, 0, 3, 1179668, 0, 3, 1179669, 0, 3, 1179670, 0, 196612, 1245188, 0, 196611, 1245189, 0, 3, 1245190, 0, 3, 1245191, 0, 3, 1245192, 0, 3, 1245193, 0, 3, 1245194, 0, 3, 1245195, 0, 3, 1245196, 0, 3, 1245197, 0, 3, 1245198, 0, 3, 1245199, 0, 3, 1245200, 0, 3, 1245201, 0, 3, 1245202, 0, 3, 1245203, 0, 3, 1245204, 0, 3, 1245205, 0, 3, 1245206, 0, 196612, 1310724, 0, 196611, 1310725, 0, 3, 1310726, 0, 3, 1310727, 0, 3, 1310728, 0, 3, 1310729, 0, 3, 1310730, 0, 3, 1310731, 0, 3, 1310732, 0, 3, 1310733, 0, 3, 1310734, 0, 3, 1310735, 0, 3, 1310736, 0, 3, 1310737, 0, 3, 1310738, 0, 3, 1310739, 0, 3, 1310740, 0, 3, 1310741, 0, 3, 1310742, 0, 196612, 1376260, 0, 65539, 1376261, 0, 262147, 1376262, 0, 262147, 1376263, 0, 262147, 1376264, 0, 262147, 1376265, 0, 262147, 1376266, 0, 262147, 1376267, 0, 262147, 1376268, 0, 262147, 1376269, 0, 262147, 1376270, 0, 262147, 1376271, 0, 262147, 1376272, 0, 262147, 1376273, 0, 262147, 1376274, 0, 262147, 1376275, 0, 262147, 1376276, 0, 262147, 1376277, 0, 262147, 1376278, 0, 65540, 1441794, 0, 65537, 1441795, 0, 262144, 1441796, 0, 262146, 1441797, 0, 2, 1441798, 0, 2, 1441799, 0, 327682, 1441800, 0, 2, 1441801, 0, 2, 1441802, 0, 2, 1441803, 0, 2, 1441804, 0, 2, 1441805, 0, 2, 1441806, 0, 2, 1441807, 0, 2, 1441808, 0, 2, 1441809, 0, 2, 1441810, 0, 2, 1441811, 0, 327682, 1441812, 0, 2, 1441813, 0, 2, 1441814, 0, 327680, 1441815, 0, 262144, 1441816, 0, 65538, 1507330, 0, 196611, 1507331, 0, 3, 1507332, 0, 131075, 1507333, 0, 262148, 1507334, 0, 262148, 1507335, 0, 262148, 1507336, 0, 262148, 1507337, 0, 262148, 1507338, 0, 262148, 1507339, 0, 262148, 1507340, 0, 262148, 1507341, 0, 262148, 1507342, 0, 262148, 1507343, 0, 262148, 1507344, 0, 262148, 1507345, 0, 262148, 1507346, 0, 262148, 1507347, 0, 262148, 1507348, 0, 262148, 1507349, 0, 262148, 1507350, 0, 131076, 1507351, 0, 3, 1507352, 0, 196612, 1572866, 0, 196611, 1572867, 0, 3, 1572868, 0, 3, 1572869, 0, 3, 1572870, 0, 3, 1572871, 0, 3, 1572872, 0, 3, 1572873, 0, 3, 1572874, 0, 3, 1572875, 0, 3, 1572876, 0, 3, 1572877, 0, 3, 1572878, 0, 3, 1572879, 0, 3, 1572880, 0, 3, 1572881, 0, 3, 1572882, 0, 3, 1572883, 0, 3, 1572884, 0, 3, 1572885, 0, 3, 1572886, 0, 3, 1572887, 0, 3, 1572888, 0, 196612, 1638402, 0, 196611, 1638403, 0, 3, 1638404, 0, 3, 1638405, 0, 3, 1638406, 0, 3, 1638407, 0, 3, 1638408, 0, 3, 1638409, 0, 3, 1638410, 0, 3, 1638411, 0, 3, 1638412, 0, 3, 1638413, 0, 3, 1638414, 0, 3, 1638415, 0, 3, 1638416, 0, 3, 1638417, 0, 3, 1638418, 0, 3, 1638419, 0, 3, 1638420, 0, 3, 1638421, 0, 3, 1638422, 0, 3, 1638423, 0, 3, 1638424, 0, 196612, 1703938, 0, 196611, 1703939, 0, 3, 1703940, 0, 3, 1703941, 0, 3, 1703942, 0, 3, 1703943, 0, 3, 1703944, 0, 3, 1703945, 0, 3, 1703946, 0, 3, 1703947, 0, 3, 1703948, 0, 3, 1703949, 0, 3, 1703950, 0, 3, 1703951, 0, 3, 1703952, 0, 3, 1703953, 0, 3, 1703954, 0, 3, 1703955, 0, 3, 1703956, 0, 3, 1703957, 0, 3, 1703958, 0, 3, 1703959, 0, 3, 1703960, 0, 196612, 1769474, 0, 65539, 1769475, 0, 262147, 1769476, 0, 262147, 1769477, 0, 262147, 1769478, 0, 262147, 1769479, 0, 262147, 1769480, 0, 262147, 1769481, 0, 262147, 1769482, 0, 262147, 1769483, 0, 262147, 1769484, 0, 262147, 1769485, 0, 262147, 1769486, 0, 262147, 1769487, 0, 262147, 1769488, 0, 262147, 1769489, 0, 262147, 1769490, 0, 262147, 1769491, 0, 262147, 1769492, 0, 262147, 1769493, 0, 262147, 1769494, 0, 262147, 1769495, 0, 262147, 1769496, 0, 65540, 1835009, 0, 262144, 1835010, 0, 262146, 1835011, 0, 2, 1835012, 0, 2, 1835013, 0, 2, 1835014, 0, 2, 1835015, 0, 2, 1835016, 0, 2, 1835017, 0, 2, 1835018, 0, 2, 1835019, 0, 2, 1835020, 0, 2, 1835021, 0, 2, 1835022, 0, 2, 1835023, 0, 2, 1835024, 0, 2, 1835025, 0, 2, 1835026, 0, 2, 1835027, 0, 2, 1835028, 0, 2, 1835029, 0, 2, 1835030, 0, 2, 1835031, 0, 2, 1835032, 0, 327680, 1835033, 0, 262144, 1900545, 0, 3, 1900546, 0, 131075, 1900547, 0, 262148, 1900548, 0, 262148, 1900549, 0, 262148, 1900550, 0, 262148, 1900551, 0, 262148, 1900552, 0, 262148, 1900553, 0, 262148, 1900554, 0, 262148, 1900555, 0, 262148, 1900556, 0, 262148, 1900557, 0, 262148, 1900558, 0, 262148, 1900559, 0, 262148, 1900560, 0, 262148, 1900561, 0, 262148, 1900562, 0, 262148, 1900563, 0, 262148, 1900564, 0, 262148, 1900565, 0, 262148, 1900566, 0, 262148, 1900567, 0, 262148, 1900568, 0, 131076, 1900569, 0, 3, 1966081, 0, 3, 1966082, 0, 3, 1966083, 0, 3, 1966084, 0, 3, 1966085, 0, 3, 1966086, 0, 3, 1966087, 0, 3, 1966088, 0, 3, 1966089, 0, 3, 1966090, 0, 3, 1966091, 0, 3, 1966092, 0, 3, 1966093, 0, 3, 1966094, 0, 3, 1966095, 0, 3, 1966096, 0, 3, 1966097, 0, 3, 1966098, 0, 3, 1966099, 0, 3, 1966100, 0, 3, 1966101, 0, 3, 1966102, 0, 3, 1966103, 0, 3, 1966104, 0, 3, 1966105, 0, 3, 2031617, 0, 3, 2031618, 0, 3, 2031619, 0, 3, 2031620, 0, 3, 2031621, 0, 3, 2031622, 0, 3, 2031623, 0, 3, 2031624, 0, 3, 2031625, 0, 3, 2031626, 0, 3, 2031627, 0, 3, 2031628, 0, 3, 2031629, 0, 3, 2031630, 0, 3, 2031631, 0, 3, 2031632, 0, 3, 2031633, 0, 3, 2031634, 0, 3, 2031635, 0, 3, 2031636, 0, 3, 2031637, 0, 3, 2031638, 0, 3, 2031639, 0, 3, 2031640, 0, 3, 2031641, 0, 3, 2097153, 0, 3, 2097154, 0, 3, 2097155, 0, 3, 2097156, 0, 3, 2097157, 0, 3, 2097158, 0, 3, 2097159, 0, 3, 2097160, 0, 3, 2097161, 0, 3, 2097162, 0, 3, 2097163, 0, 3, 2097164, 0, 3, 2097165, 0, 3, 2097166, 0, 3, 2097167, 0, 3, 2097168, 0, 3, 2097169, 0, 3, 2097170, 0, 3, 2097171, 0, 3, 2097172, 0, 3, 2097173, 0, 3, 2097174, 0, 3, 2097175, 0, 3, 2097176, 0, 3, 2097177, 0, 3, 2162689, 0, 262147, 2162690, 0, 262147, 2162691, 0, 262147, 2162692, 0, 262147, 2162693, 0, 262147, 2162694, 0, 262147, 2162695, 0, 262147, 2162696, 0, 262147, 2162697, 0, 262147, 2162698, 0, 262147, 2162699, 0, 262147, 2162700, 0, 262147, 2162701, 0, 262147, 2162702, 0, 262147, 2162703, 0, 262147, 2162704, 0, 262147, 2162705, 0, 262147, 2162706, 0, 262147, 2162707, 0, 262147, 2162708, 0, 262147, 2162709, 0, 262147, 2162710, 0, 262147, 2162711, 0, 262147, 2162712, 0, 262147, 2162713, 0, 262147, 2228225, 0, 2, 2228226, 0, 2, 2228227, 0, 2, 2228228, 0, 2, 2228229, 0, 2, 2228230, 0, 2, 2228231, 0, 327682, 2228232, 0, 2, 2228233, 0, 2, 2228234, 0, 2, 2228235, 0, 2, 2228236, 0, 2, 2228237, 0, 2, 2228238, 0, 2, 2228239, 0, 327682, 2228240, 0, 2, 2228241, 0, 2, 2228242, 0, 2, 2228243, 0, 2, 2228244, 0, 2, 2228245, 0, 2, 2228246, 0, 2, 2228247, 0, 2, 2228248, 0, 2, 2228249, 0, 2, 2293761, 0, 262148, 2293762, 0, 262148, 2293763, 0, 262148, 2293764, 0, 262148, 2293765, 0, 262148, 2293766, 0, 262148, 2293767, 0, 262148, 2293768, 0, 262148, 2293769, 0, 262148, 2293770, 0, 262148, 2293771, 0, 262148, 2293772, 0, 262148, 2293773, 0, 262148, 2293774, 0, 262148, 2293775, 0, 262148, 2293776, 0, 262148, 2293777, 0, 262148, 2293778, 0, 262148, 2293779, 0, 262148, 2293780, 0, 262148, 2293781, 0, 262148, 2293782, 0, 262148, 2293783, 0, 262148, 2293784, 0, 262148, 2293785, 0, 262148, 2359297, 0, 3, 2359298, 0, 3, 2359299, 0, 3, 2359300, 0, 3, 2359301, 0, 3, 2359302, 0, 3, 2359303, 0, 3, 2359304, 0, 3, 2359305, 0, 3, 2359306, 0, 3, 2359307, 0, 3, 2359308, 0, 3, 2359309, 0, 3, 2359310, 0, 3, 2359311, 0, 3, 2359312, 0, 3, 2359313, 0, 3, 2359314, 0, 3, 2359315, 0, 3, 2359316, 0, 3, 2359317, 0, 3, 2359318, 0, 3, 2359319, 0, 3, 2359320, 0, 3, 2359321, 0, 3, 2424833, 0, 3, 2424834, 0, 3, 2424835, 0, 3, 2424836, 0, 3, 2424837, 0, 3, 2424838, 0, 3, 2424839, 0, 3, 2424840, 0, 3, 2424841, 0, 3, 2424842, 0, 3, 2424843, 0, 3, 2424844, 0, 3, 2424845, 0, 3, 2424846, 0, 3, 2424847, 0, 3, 2424848, 0, 3, 2424849, 0, 3, 2424850, 0, 3, 2424851, 0, 3, 2424852, 0, 3, 2424853, 0, 3, 2424854, 0, 3, 2424855, 0, 3, 2424856, 0, 3, 2424857, 0, 3, 2490369, 0, 3, 2490370, 0, 3, 2490371, 0, 3, 2490372, 0, 3, 2490373, 0, 3, 2490374, 0, 3, 2490375, 0, 3, 2490376, 0, 3, 2490377, 0, 3, 2490378, 0, 3, 2490379, 0, 3, 2490380, 0, 3, 2490381, 0, 3, 2490382, 0, 3, 2490383, 0, 3, 2490384, 0, 3, 2490385, 0, 3, 2490386, 0, 3, 2490387, 0, 3, 2490388, 0, 3, 2490389, 0, 3, 2490390, 0, 3, 2490391, 0, 3, 2490392, 0, 3, 2490393, 0, 3 )
+
+[node name="MountainProps" type="TileMap" parent="LevelGraphics"]
+tile_set = SubResource( 2 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( 393226, 0, 65536, 393233, 0, 65536, 458761, 0, 65536, 458769, 0, 0, 524298, 0, 65536, 786440, 0, 0, 786442, 0, 65536, 786447, 0, 65536, 786448, 0, 65536, 786449, 0, 0, 851977, 0, 65536, 851978, 0, 0, 851983, 0, 65536, 851984, 0, 0, 851985, 0, 0, 917512, 0, 65536, 917513, 0, 0, 917515, 0, 65536, 917520, 0, 65536, 1048588, 0, 65536, 1048589, 0, 65536, 1048590, 0, 0, 1048597, 0, 0, 1114116, 0, 65536, 1114124, 0, 0, 1114125, 0, 65536, 1114126, 0, 65536, 1179652, 0, 0, 1179655, 0, 65536, 1245191, 0, 65536, 1441794, 0, 65536, 1441795, 0, 0, 1441815, 0, 65536, 1507351, 0, 65536, 1572866, 0, 65536, 1572867, 0, 0, 1572874, 0, 65536, 1572876, 0, 65536, 1703960, 0, 65536, 1835009, 0, 65536, 1900569, 0, 65536, 1966084, 0, 65536, 1966085, 0, 65536, 1966089, 0, 65536, 1966090, 0, 65536, 1966095, 0, 0, 1966101, 0, 65536, 1966105, 0, 65536, 2031617, 0, 65536, 2031621, 0, 65536, 2031622, 0, 0, 2031626, 0, 65536, 2031637, 0, 65536, 2031640, 0, 0, 2097161, 0, 65536, 2359298, 0, 65536, 2359299, 0, 0, 2359317, 0, 65536, 2359320, 0, 0, 2359321, 0, 0, 2424833, 0, 0, 2424848, 0, 65536, 2424852, 0, 0, 2424853, 0, 65536, 2424856, 0, 65536 )
+
+[node name="UIFrame" type="Sprite" parent="."]
+position = Vector2( 1, 0 )
+texture = ExtResource( 31 )
+centered = false
+
+[node name="FrameBorder" type="NinePatchRect" parent="UIFrame"]
+margin_right = 216.0
+margin_bottom = 320.0
+texture = ExtResource( 32 )
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mountain" type="Node2D" parent="."]
+
+[node name="ForSale" parent="Mountain" instance=ExtResource( 1 )]
+position = Vector2( 83, 78 )
+price_range = "high"
+id = "mountain"
+max_price = 30000
+min_price = 29950
+
+[node name="Sprite" parent="Mountain/ForSale" index="0"]
+position = Vector2( -2, -1 )
+texture = ExtResource( 25 )
+
+[node name="CollisionShape2D" parent="Mountain/ForSale/Sprite/Area2D" index="0"]
+position = Vector2( 25, 8 )
+scale = Vector2( 3, 1 )
+
+[node name="Label" parent="Mountain/ForSale" index="1"]
+margin_left = 15.0
+margin_top = 26.0
+margin_right = 40.0
+margin_bottom = 31.0
+
+[node name="ArrowSprite" parent="Mountain/ForSale/Label" index="2"]
+frame = 1
+
+[node name="Timers" type="Node2D" parent="."]
+
+[node name="LoTimer" type="Timer" parent="Timers"]
+wait_time = 4.0
+autostart = true
+
+[node name="MidTimer" type="Timer" parent="Timers"]
+wait_time = 7.0
+autostart = true
+
+[node name="HighTimer" type="Timer" parent="Timers"]
+wait_time = 7.5
+autostart = true
+
+[node name="Floors" type="Node2D" parent="."]
+
+[node name="Floor6" type="Node2D" parent="Floors"]
+
+[node name="MoriyaHouse" parent="Floors/Floor6" groups=["high"] instance=ExtResource( 1 )]
+position = Vector2( 88, 29 )
+price_range = "high"
+id = "moriya"
+max_price = 8300
+min_price = 4000
+
+[node name="Sprite" parent="Floors/Floor6/MoriyaHouse" index="0"]
+texture = ExtResource( 22 )
+
+[node name="CollisionShape2D" parent="Floors/Floor6/MoriyaHouse/Sprite/Area2D" index="0"]
+position = Vector2( 21, 22 )
+scale = Vector2( 2.5, 2.3 )
+
+[node name="Label" parent="Floors/Floor6/MoriyaHouse" index="1"]
+margin_left = -33.0
+margin_top = 3.0
+margin_right = -8.0
+margin_bottom = 8.0
+
+[node name="ArrowSprite" parent="Floors/Floor6/MoriyaHouse/Label" index="2"]
+frame = 1
+
+[node name="ShiningNeedleCastle" parent="Floors/Floor6" groups=["high"] instance=ExtResource( 1 )]
+position = Vector2( 148, 18 )
+price_range = "high"
+id = "shining"
+max_price = 8000
+min_price = 3800
+
+[node name="Sprite" parent="Floors/Floor6/ShiningNeedleCastle" index="0"]
+texture = ExtResource( 23 )
+
+[node name="CollisionShape2D" parent="Floors/Floor6/ShiningNeedleCastle/Sprite/Area2D" index="0"]
+position = Vector2( 19, 31 )
+scale = Vector2( 2.2, 3.357 )
+
+[node name="Label" parent="Floors/Floor6/ShiningNeedleCastle" index="1"]
+margin_left = -6.0
+margin_top = -2.0
+margin_right = 19.0
+margin_bottom = 3.0
+
+[node name="ArrowSprite" parent="Floors/Floor6/ShiningNeedleCastle/Label" index="2"]
+frame = 1
+
+[node name="Floor5" type="Node2D" parent="Floors"]
+
+[node name="MegumuHouse" parent="Floors/Floor5" groups=["high"] instance=ExtResource( 1 )]
+position = Vector2( 32, 92 )
+price_range = "high"
+id = "megumu"
+max_price = 8600
+min_price = 5200
+
+[node name="Sprite" parent="Floors/Floor5/MegumuHouse" index="0"]
+position = Vector2( -2, -1 )
+texture = ExtResource( 20 )
+
+[node name="CollisionShape2D" parent="Floors/Floor5/MegumuHouse/Sprite/Area2D" index="0"]
+position = Vector2( 18, 17 )
+scale = Vector2( 2, 1.87 )
+
+[node name="Label" parent="Floors/Floor5/MegumuHouse" index="1"]
+margin_left = 7.0
+margin_top = -16.0
+margin_right = 27.0
+margin_bottom = -11.0
+
+[node name="ArrowSprite" parent="Floors/Floor5/MegumuHouse/Label" index="2"]
+frame = 1
+
+[node name="HatateHouse" parent="Floors/Floor5" groups=["mid"] instance=ExtResource( 1 )]
+position = Vector2( 142, 81 )
+price_range = "mid"
+id = "hatate"
+max_price = 2300
+min_price = 1100
+
+[node name="Sprite" parent="Floors/Floor5/HatateHouse" index="0"]
+texture = ExtResource( 21 )
+
+[node name="CollisionShape2D" parent="Floors/Floor5/HatateHouse/Sprite/Area2D" index="0"]
+position = Vector2( 15, 17 )
+scale = Vector2( 1.675, 1.879 )
+
+[node name="Label" parent="Floors/Floor5/HatateHouse" index="1"]
+margin_left = 5.0
+margin_top = -8.0
+margin_right = 25.0
+margin_bottom = -3.0
+
+[node name="ArrowSprite" parent="Floors/Floor5/HatateHouse/Label" index="2"]
+frame = 1
+
+[node name="Floor4" type="Node2D" parent="Floors"]
+
+[node name="AyaHouse" parent="Floors/Floor4" groups=["mid"] instance=ExtResource( 1 )]
+position = Vector2( 36, 137 )
+price_range = "mid"
+id = "aya"
+max_price = 2300
+min_price = 1300
+
+[node name="Sprite" parent="Floors/Floor4/AyaHouse" index="0"]
+position = Vector2( 2, -5 )
+texture = ExtResource( 16 )
+
+[node name="CollisionShape2D" parent="Floors/Floor4/AyaHouse/Sprite/Area2D" index="0"]
+position = Vector2( 10, 21 )
+scale = Vector2( 1.175, 2.109 )
+
+[node name="Label" parent="Floors/Floor4/AyaHouse" index="1"]
+margin_left = 0.0
+margin_top = -7.0
+margin_right = 25.0
+margin_bottom = -2.0
+
+[node name="ArrowSprite" parent="Floors/Floor4/AyaHouse/Label" index="2"]
+frame = 1
+
+[node name="KutakaHouse" parent="Floors/Floor4" groups=["high"] instance=ExtResource( 1 )]
+position = Vector2( 96, 134 )
+price_range = "high"
+id = "kutaka"
+max_price = 6300
+min_price = 3100
+
+[node name="Sprite" parent="Floors/Floor4/KutakaHouse" index="0"]
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" parent="Floors/Floor4/KutakaHouse/Sprite/Area2D" index="0"]
+position = Vector2( 22, 16 )
+scale = Vector2( 2.7, 1.75 )
+
+[node name="Label" parent="Floors/Floor4/KutakaHouse" index="1"]
+margin_left = 14.0
+margin_top = -4.0
+margin_right = 34.0
+margin_bottom = 1.0
+
+[node name="ArrowSprite" parent="Floors/Floor4/KutakaHouse/Label" index="2"]
+frame = 1
+
+[node name="MomijiWatchtower" parent="Floors/Floor4" groups=["lo"] instance=ExtResource( 1 )]
+position = Vector2( 72, 133 )
+id = "momiji"
+max_price = 800
+min_price = 300
+
+[node name="Sprite" parent="Floors/Floor4/MomijiWatchtower" index="0"]
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" parent="Floors/Floor4/MomijiWatchtower/Sprite/Area2D" index="0"]
+position = Vector2( 8, 17 )
+scale = Vector2( 1, 1.85 )
+
+[node name="Label" parent="Floors/Floor4/MomijiWatchtower" index="1"]
+margin_top = 21.0
+margin_bottom = 26.0
+
+[node name="ArrowSprite" parent="Floors/Floor4/MomijiWatchtower/Label" index="2"]
+frame = 1
+
+[node name="Onsen" parent="Floors/Floor4" groups=["mid"] instance=ExtResource( 1 )]
+position = Vector2( 143, 132 )
+price_range = "mid"
+id = "onsen"
+max_price = 1900
+min_price = 1000
+
+[node name="Sprite" parent="Floors/Floor4/Onsen" index="0"]
+texture = ExtResource( 19 )
+
+[node name="CollisionShape2D" parent="Floors/Floor4/Onsen/Sprite/Area2D" index="0"]
+position = Vector2( 20, 17 )
+scale = Vector2( 2.179, 1.869 )
+
+[node name="Label" parent="Floors/Floor4/Onsen" index="1"]
+margin_left = 22.0
+margin_top = -2.0
+margin_right = 42.0
+margin_bottom = 3.0
+
+[node name="ArrowSprite" parent="Floors/Floor4/Onsen/Label" index="2"]
+frame = 1
+
+[node name="Floor3" type="Node2D" parent="Floors"]
+
+[node name="SannyoDen" parent="Floors/Floor3" groups=["high"] instance=ExtResource( 1 )]
+position = Vector2( 25, 179 )
+price_range = "mid"
+id = "sannyo"
+max_price = 2100
+min_price = 1300
+
+[node name="Sprite" parent="Floors/Floor3/SannyoDen" index="0"]
+texture = ExtResource( 12 )
+
+[node name="CollisionShape2D" parent="Floors/Floor3/SannyoDen/Sprite/Area2D" index="0"]
+position = Vector2( 23, 17 )
+scale = Vector2( 2.846, 1.888 )
+
+[node name="Label" parent="Floors/Floor3/SannyoDen" index="1"]
+margin_left = 7.0
+margin_top = 15.0
+margin_right = 32.0
+margin_bottom = 20.0
+
+[node name="ArrowSprite" parent="Floors/Floor3/SannyoDen/Label" index="2"]
+frame = 1
+
+[node name="DragonMine" parent="Floors/Floor3" groups=["lo"] instance=ExtResource( 1 )]
+position = Vector2( 77, 186 )
+id = "dragon"
+min_price = 300
+
+[node name="Sprite" parent="Floors/Floor3/DragonMine" index="0"]
+texture = ExtResource( 13 )
+
+[node name="CollisionShape2D" parent="Floors/Floor3/DragonMine/Sprite/Area2D" index="0"]
+position = Vector2( 11, 13 )
+scale = Vector2( 1.333, 1.423 )
+
+[node name="Label" parent="Floors/Floor3/DragonMine" index="1"]
+margin_top = -9.0
+margin_right = 23.0
+margin_bottom = -4.0
+
+[node name="ArrowSprite" parent="Floors/Floor3/DragonMine/Label" index="2"]
+frame = 1
+
+[node name="NitoriHouse" parent="Floors/Floor3" groups=["mid"] instance=ExtResource( 1 )]
+position = Vector2( 110, 186 )
+price_range = "mid"
+id = "nitori"
+max_price = 1600
+min_price = 600
+
+[node name="Sprite" parent="Floors/Floor3/NitoriHouse" index="0"]
+texture = ExtResource( 14 )
+
+[node name="CollisionShape2D" parent="Floors/Floor3/NitoriHouse/Sprite/Area2D" index="0"]
+position = Vector2( 15, 13 )
+scale = Vector2( 1.873, 1.434 )
+
+[node name="Label" parent="Floors/Floor3/NitoriHouse" index="1"]
+margin_left = 11.0
+margin_top = -9.0
+margin_right = 31.0
+margin_bottom = -4.0
+
+[node name="ArrowSprite" parent="Floors/Floor3/NitoriHouse/Label" index="2"]
+frame = 1
+
+[node name="GreatToadPond" parent="Floors/Floor3" groups=["lo"] instance=ExtResource( 1 )]
+position = Vector2( 148, 184 )
+id = "toad"
+max_price = 800
+min_price = 300
+
+[node name="Sprite" parent="Floors/Floor3/GreatToadPond" index="0"]
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" parent="Floors/Floor3/GreatToadPond/Sprite/Area2D" index="0"]
+position = Vector2( 24, 14 )
+scale = Vector2( 1.909, 1.44 )
+
+[node name="Label" parent="Floors/Floor3/GreatToadPond" index="1"]
+margin_left = 22.0
+margin_top = -6.0
+margin_right = 47.0
+margin_bottom = -1.0
+
+[node name="ArrowSprite" parent="Floors/Floor3/GreatToadPond/Label" index="2"]
+frame = 1
+
+[node name="Floor2" type="Node2D" parent="Floors"]
+
+[node name="TakaneTent2" parent="Floors/Floor2" groups=["mid"] instance=ExtResource( 1 )]
+position = Vector2( 48, 225 )
+price_range = "mid"
+id = "takane"
+max_price = 1600
+
+[node name="Sprite" parent="Floors/Floor2/TakaneTent2" index="0"]
+texture = ExtResource( 11 )
+
+[node name="CollisionShape2D" parent="Floors/Floor2/TakaneTent2/Sprite/Area2D" index="0"]
+position = Vector2( 11, 18 )
+scale = Vector2( 1.325, 1.991 )
+
+[node name="Label" parent="Floors/Floor2/TakaneTent2" index="1"]
+margin_left = -5.0
+margin_top = -10.0
+margin_right = 20.0
+margin_bottom = -5.0
+
+[node name="ArrowSprite" parent="Floors/Floor2/TakaneTent2/Label" index="2"]
+frame = 1
+
+[node name="TakaneTent" parent="Floors/Floor2" groups=["lo"] instance=ExtResource( 1 )]
+position = Vector2( 20, 238 )
+id = "tent"
+max_price = 400
+min_price = 50
+
+[node name="Sprite" parent="Floors/Floor2/TakaneTent" index="0"]
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" parent="Floors/Floor2/TakaneTent/Sprite/Area2D" index="0"]
+position = Vector2( 7, 12 )
+scale = Vector2( 0.829, 1.188 )
+
+[node name="Label" parent="Floors/Floor2/TakaneTent" index="1"]
+margin_left = 11.0
+margin_top = -4.0
+margin_right = 36.0
+margin_bottom = 1.0
+
+[node name="ArrowSprite" parent="Floors/Floor2/TakaneTent/Label" index="2"]
+frame = 1
+
+[node name="HinaHouse" parent="Floors/Floor2" groups=["mid"] instance=ExtResource( 1 )]
+position = Vector2( 85, 227 )
+price_range = "mid"
+id = "hina"
+max_price = 1500
+min_price = 600
+
+[node name="Sprite" parent="Floors/Floor2/HinaHouse" index="0"]
+texture = ExtResource( 24 )
+
+[node name="CollisionShape2D" parent="Floors/Floor2/HinaHouse/Sprite/Area2D" index="0"]
+position = Vector2( 13, 20 )
+scale = Vector2( 1.325, 1.991 )
+
+[node name="Label" parent="Floors/Floor2/HinaHouse" index="1"]
+margin_left = 3.0
+margin_top = -6.0
+margin_right = 23.0
+margin_bottom = -1.0
+
+[node name="ArrowSprite" parent="Floors/Floor2/HinaHouse/Label" index="2"]
+frame = 1
+
+[node name="KasenSenkai" parent="Floors/Floor2" groups=["high"] instance=ExtResource( 1 )]
+position = Vector2( 119, 208 )
+price_range = "high"
+id = "kasen"
+max_price = 6500
+min_price = 3500
+
+[node name="Sprite" parent="Floors/Floor2/KasenSenkai" index="0"]
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" parent="Floors/Floor2/KasenSenkai/Sprite/Area2D" index="0"]
+position = Vector2( 21, 29 )
+scale = Vector2( 2.5, 2.5 )
+
+[node name="Label" parent="Floors/Floor2/KasenSenkai" index="1"]
+margin_left = 24.0
+margin_top = 8.0
+margin_right = 49.0
+margin_bottom = 13.0
+
+[node name="ArrowSprite" parent="Floors/Floor2/KasenSenkai/Label" index="2"]
+frame = 1
+
+[node name="NemunoHouse" parent="Floors/Floor2" groups=["lo"] instance=ExtResource( 1 )]
+position = Vector2( 167, 241 )
+id = "yamanba"
+max_price = 350
+min_price = 75
+
+[node name="Sprite" parent="Floors/Floor2/NemunoHouse" index="0"]
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" parent="Floors/Floor2/NemunoHouse/Sprite/Area2D" index="0"]
+position = Vector2( 11, 11 )
+
+[node name="Label" parent="Floors/Floor2/NemunoHouse" index="1"]
+margin_left = 8.0
+margin_top = -1.0
+margin_right = 33.0
+margin_bottom = 4.0
+
+[node name="ArrowSprite" parent="Floors/Floor2/NemunoHouse/Label" index="2"]
+frame = 1
+
+[node name="Floor1" type="Node2D" parent="Floors"]
+
+[node name="Ropeway" parent="Floors/Floor1" groups=["mid"] instance=ExtResource( 1 )]
+position = Vector2( 17, 273 )
+id = "ropeway"
+max_price = 900
+min_price = 300
+
+[node name="Sprite" parent="Floors/Floor1/Ropeway" index="0"]
+texture = ExtResource( 9 )
+
+[node name="Area2D" parent="Floors/Floor1/Ropeway/Sprite" index="0"]
+position = Vector2( 14, 6 )
+
+[node name="CollisionShape2D" parent="Floors/Floor1/Ropeway/Sprite/Area2D" index="0"]
+position = Vector2( 11, 11 )
+scale = Vector2( 2.638, 2.086 )
+
+[node name="Label" parent="Floors/Floor1/Ropeway" index="1"]
+margin_left = 19.0
+margin_top = -3.0
+margin_right = 44.0
+margin_bottom = 2.0
+
+[node name="ArrowSprite" parent="Floors/Floor1/Ropeway/Label" index="2"]
+frame = 1
+
+[node name="ChimataMarket" parent="Floors/Floor1" groups=["high"] instance=ExtResource( 1 )]
+position = Vector2( 68, 282 )
+price_range = "high"
+id = "chimata"
+max_price = 5000
+min_price = 3000
+
+[node name="Sprite" parent="Floors/Floor1/ChimataMarket" index="0"]
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" parent="Floors/Floor1/ChimataMarket/Sprite/Area2D" index="0"]
+position = Vector2( 28, 14 )
+scale = Vector2( 3.468, 1.399 )
+
+[node name="Label" parent="Floors/Floor1/ChimataMarket" index="1"]
+margin_left = 19.0
+margin_top = -10.0
+margin_right = 44.0
+margin_bottom = -5.0
+
+[node name="ArrowSprite" parent="Floors/Floor1/ChimataMarket/Label" index="2"]
+frame = 1
+
+[node name="AkiResidence" parent="Floors/Floor1" groups=["lo"] instance=ExtResource( 1 )]
+position = Vector2( 133, 281 )
+id = "aki"
+max_price = 450
+min_price = 125
+
+[node name="Sprite" parent="Floors/Floor1/AkiResidence" index="0"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" parent="Floors/Floor1/AkiResidence/Sprite/Area2D" index="0"]
+position = Vector2( 15, 14 )
+scale = Vector2( 1.712, 1.565 )
+
+[node name="Label" parent="Floors/Floor1/AkiResidence" index="1"]
+margin_left = -1.0
+margin_top = -15.0
+margin_right = 24.0
+margin_bottom = -10.0
+
+[node name="ArrowSprite" parent="Floors/Floor1/AkiResidence/Label" index="2"]
+frame = 1
+
+[node name="RingoStand" parent="Floors/Floor1" groups=["lo"] instance=ExtResource( 1 )]
+position = Vector2( 176, 291 )
+id = "ringo"
+max_price = 400
+min_price = 100
+
+[node name="Label" parent="Floors/Floor1/RingoStand" index="1"]
+margin_left = 0.0
+margin_top = -6.0
+margin_right = 25.0
+margin_bottom = -1.0
+
+[node name="ArrowSprite" parent="Floors/Floor1/RingoStand/Label" index="2"]
+frame = 1
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CountdownTimer" parent="Control" instance=ExtResource( 26 )]
+position = Vector2( 227, 149 )
+
+[node name="TimeLeftLabel" parent="Control/CountdownTimer" index="0"]
+margin_right = 63.0
+margin_bottom = 23.0
+
+[node name="CurrencySprite" type="Sprite" parent="Control"]
+position = Vector2( 277, 124 )
+texture = ExtResource( 33 )
+
+[node name="Money" type="Label" parent="Control"]
+margin_left = 227.0
+margin_top = 104.0
+margin_right = 289.0
+margin_bottom = 115.0
+custom_fonts/font = ExtResource( 27 )
+text = "MONEY:
+999999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HouseNameLabel" type="Label" parent="Control"]
+margin_left = 229.0
+margin_top = 247.0
+margin_right = 314.0
+margin_bottom = 275.0
+custom_fonts/font = ExtResource( 28 )
+text = "Kutaka's house"
+align = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLabel" type="Label" parent="Control"]
+margin_left = 232.0
+margin_top = 21.0
+margin_right = 295.0
+margin_bottom = 57.0
+custom_fonts/font = ExtResource( 27 )
+text = "Highly
+    Valued
+ Property"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreUI" type="Control" parent="Control"]
+visible = false
+margin_left = 40.0
+margin_top = 74.0
+margin_right = 221.0
+margin_bottom = 196.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/ScoreUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 35 )
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOver" type="Label" parent="Control/ScoreUI"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -67.5
+margin_top = -40.0
+margin_right = 67.5
+margin_bottom = 33.0
+custom_fonts/font = ExtResource( 27 )
+text = "GAME_OVER"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Win" type="Control" parent="Control/ScoreUI"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 7.0
+margin_right = -8.0
+margin_bottom = -8.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaticText" type="Control" parent="Control/ScoreUI/Win"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 9.0
+margin_top = 8.0
+margin_right = -5.0
+margin_bottom = -11.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Assets" type="Label" parent="Control/ScoreUI/Win/StaticText"]
+margin_left = -2.0
+margin_top = -1.0
+margin_right = 61.0
+margin_bottom = 7.0
+custom_fonts/font = ExtResource( 27 )
+text = "SCORE_ASSETS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Money" type="Label" parent="Control/ScoreUI/Win/StaticText"]
+margin_left = -2.0
+margin_top = 11.0
+margin_right = 61.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 27 )
+text = "MONEY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line" type="Label" parent="Control/ScoreUI/Win/StaticText"]
+margin_left = -6.0
+margin_top = 16.0
+margin_right = 155.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 27 )
+text = "_______________________"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Total" type="Label" parent="Control/ScoreUI/Win/StaticText"]
+modulate = Color( 0.976471, 0.909804, 0.384314, 1 )
+margin_left = -2.0
+margin_top = 32.0
+margin_right = 99.0
+margin_bottom = 46.0
+custom_fonts/font = ExtResource( 27 )
+text = "total"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="Control/ScoreUI/Win/StaticText"]
+margin_left = -2.0
+margin_top = 44.0
+margin_right = 109.0
+margin_bottom = 54.0
+custom_fonts/font = ExtResource( 27 )
+text = "TIME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ThankYou" type="Label" parent="Control/ScoreUI/Win/StaticText"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -88.5
+margin_top = 16.0
+margin_right = 84.5
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 27 )
+text = "THANK_YOU"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NumberText" type="Control" parent="Control/ScoreUI/Win"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Assets" type="Label" parent="Control/ScoreUI/Win/NumberText"]
+margin_left = 96.0
+margin_top = 7.0
+margin_right = 161.0
+margin_bottom = 17.0
+custom_fonts/font = ExtResource( 27 )
+text = "9.999.999"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Money" type="Label" parent="Control/ScoreUI/Win/NumberText"]
+margin_left = 96.0
+margin_top = 19.0
+margin_right = 161.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 27 )
+text = "9.999.999"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Total" type="Label" parent="Control/ScoreUI/Win/NumberText"]
+modulate = Color( 0.976471, 0.909804, 0.384314, 1 )
+margin_left = 100.0
+margin_top = 40.0
+margin_right = 161.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 27 )
+text = "9.999.999"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="Control/ScoreUI/Win/NumberText"]
+margin_left = 50.0
+margin_top = 52.0
+margin_right = 161.0
+margin_bottom = 62.0
+custom_fonts/font = ExtResource( 27 )
+text = "99:99"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="Button" parent="Control/ScoreUI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = 33.0
+margin_right = 20.0
+margin_bottom = 49.0
+theme = ExtResource( 40 )
+text = "MENU"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton2" type="Button" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 252.0
+margin_top = 276.0
+margin_right = 292.0
+margin_bottom = 292.0
+theme = ExtResource( 40 )
+text = "MENU"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MountainTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="BgMusicPlayer" type="AudioStreamPlayer" parent="Sounds"]
+volume_db = -8.0
+
+[node name="BuyMountain" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 36 )
+bus = "SoundEffects"
+
+[node name="GameOver" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 37 )
+bus = "SoundEffects"
+
+[node name="VolumeControl" parent="." instance=ExtResource( 39 )]
+margin_left = 232.0
+margin_top = 299.0
+margin_right = 232.0
+margin_bottom = 299.0
+
+[connection signal="timeout" from="Timers/LoTimer" to="." method="_on_LoTimer_timeout"]
+[connection signal="timeout" from="Timers/MidTimer" to="." method="_on_MidTimer_timeout"]
+[connection signal="timeout" from="Timers/HighTimer" to="." method="_on_HighTimer_timeout"]
+[connection signal="timeout" from="Control/CountdownTimer/Timer" to="." method="_on_CountdownTimer_timeout"]
+[connection signal="pressed" from="Control/ScoreUI/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="Control/BackButton2" to="." method="_on_BackButton_pressed"]
+[connection signal="timeout" from="MountainTimer" to="." method="_on_MountainTimer_timeout"]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
+
+[editable path="Mountain/ForSale"]
+[editable path="Floors/Floor6/MoriyaHouse"]
+[editable path="Floors/Floor6/ShiningNeedleCastle"]
+[editable path="Floors/Floor5/MegumuHouse"]
+[editable path="Floors/Floor5/HatateHouse"]
+[editable path="Floors/Floor4/AyaHouse"]
+[editable path="Floors/Floor4/KutakaHouse"]
+[editable path="Floors/Floor4/MomijiWatchtower"]
+[editable path="Floors/Floor4/Onsen"]
+[editable path="Floors/Floor3/SannyoDen"]
+[editable path="Floors/Floor3/DragonMine"]
+[editable path="Floors/Floor3/NitoriHouse"]
+[editable path="Floors/Floor3/GreatToadPond"]
+[editable path="Floors/Floor2/TakaneTent2"]
+[editable path="Floors/Floor2/TakaneTent"]
+[editable path="Floors/Floor2/HinaHouse"]
+[editable path="Floors/Floor2/KasenSenkai"]
+[editable path="Floors/Floor2/NemunoHouse"]
+[editable path="Floors/Floor1/Ropeway"]
+[editable path="Floors/Floor1/ChimataMarket"]
+[editable path="Floors/Floor1/AkiResidence"]
+[editable path="Floors/Floor1/RingoStand"]
+[editable path="Control/CountdownTimer"]

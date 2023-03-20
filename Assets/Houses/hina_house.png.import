@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/hina_house.png-563bb939fd86851d2e4067ba374b2075.res"
+group_file="res://Assets/house_atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://Assets/Houses/hina_house.png"
+dest_files=[ "res://.import/hina_house.png-563bb939fd86851d2e4067ba374b2075.res" ]
+
+[params]
+
+atlas_file="res://Assets/house_atlas.png"
+import_mode=0

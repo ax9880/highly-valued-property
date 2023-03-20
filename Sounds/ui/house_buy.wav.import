@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/house_buy.wav-d2b0abf3a3d25ead3048f933da849564.sample"
+
+[deps]
+
+source_file="res://Sounds/ui/house_buy.wav"
+dest_files=[ "res://.import/house_buy.wav-d2b0abf3a3d25ead3048f933da849564.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

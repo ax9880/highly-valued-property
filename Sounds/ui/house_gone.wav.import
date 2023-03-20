@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/house_gone.wav-778b346d689fd5d60216d12c15ce5320.sample"
+
+[deps]
+
+source_file="res://Sounds/ui/house_gone.wav"
+dest_files=[ "res://.import/house_gone.wav-778b346d689fd5d60216d12c15ce5320.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

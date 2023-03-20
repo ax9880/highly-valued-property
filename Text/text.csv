@@ -1,0 +1,64 @@
+keys,en,es
+START,Start,Comenzar
+QUIT,Quit,Salir
+EXPLANATION,"Play a hand in the Youkai real estate market -- can you buy the mountain itself?
+
+- Wait until properties are listed on the market
+- Click on properties to buy them
+- Click again to sell them
+- Earn money by buying and selling at the right times
+- Buy the Mountain before the time is up
+
+Start small and work your way up","Juega una mano en el mercado de bienes raíces de los Youkai -- ¿puedes comprar la mismísima Montaña?
+
+- Espera hasta que las propiedades estén a la venta
+- Haz click sobre las propiedades para comprarlas
+- Haz click de nuevo para venderlas
+- Gana dinero comprando y vendiendo en el momento correcto
+- Compra la Montaña antes de que se acabe el tiempo
+
+Comienza con cosas pequeñas y ve ascendiendo poco a poco"
+ASSETS_CREDITS,Gravity Pixel fonts by John Watson,Fuente Gravity Pixel por John Watson
+DEVELOPER_CREDITS,"By EmeraldMap
+
+For Touhou Station Game Jam 2021","Por EmeraldMap
+
+Para Touhou Station Game Jam 2021"
+TOGGLE,Toggle,Activar/Desactivar
+MONEY,Money,Dinero
+TIME_LEFT,Time left,"Tiempo
+restante"
+MENU,Menu,Menú
+HOUSE_MORIYA,Moriya residence,Residencia Moriya
+HOUSE_SHINING,Shining Needle Castle,Castillo de la Aguja Brillante
+HOUSE_MEGUMU,Megumu's mansion,Mansión de Megumu
+HOUSE_MOUNTAIN,Youkai Mountain,Montaña Youkai
+HOUSE_HATATE,Hatate's house,Casa de Hatate
+HOUSE_AYA,Aya's house,Casa de Aya
+HOUSE_MOMIJI,Momiji's watchtower,Torre de vigliancia de Momiji
+HOUSE_KUTAKA,Kutaka's country house,Finca de Kutaka
+HOUSE_ONSEN,Secret Tengu Hot Springs,Termales secretas de los Tengu
+HOUSE_SANNYO,Sannyo's den,Garito de Sannyo
+HOUSE_DRAGON,Rainbow Dragon Cave Entrance,Entrada de la Cueva del Dragón Arcoíris
+HOUSE_NITORI,Nitori's submerged house,Casa sumergida de Nitori
+HOUSE_TOAD,Giant Toad's Pond,Estanque del Sapo Gigante
+HOUSE_TENT,Yamawaro frontline camp,Campo de vanguardia de los Yamawaro
+HOUSE_TAKANE,Takane's base camp,Campamento base de Takane
+HOUSE_HINA,Hina's house,Casa de Hina
+HOUSE_KASEN,Kasen's dojo,Dojo de Kasen
+HOUSE_YAMANBA,Nemuno's house,Casa de Nemuno
+HOUSE_ROPEWAY,Moriya ropeway,Cable aéreo Moriya
+HOUSE_CHIMATA,Chimata's Rainbow Market,Mercado Arcoíris de Chimata
+HOUSE_AKI,Aki residence,Residencia Aki
+HOUSE_RINGO,Ringo's dango stand,Puesto de dango de Ringo
+GAME_OVER,"Time up!
+
+Game over
+Please try again","¡Se acabó el tiempo!
+
+Fin del juego
+Por favor inténtalo de nuevo"
+SCORE_ASSETS,Assets,Activos
+TOTAL,Total,Total
+TIME,Time,Tiempo
+THANK_YOU,Thank you for playing!,¡Gracias por jugar!

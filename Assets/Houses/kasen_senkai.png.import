@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/kasen_senkai.png-9ee6a5debcbff776974516c8a62a9d2c.res"
+group_file="res://Assets/house_atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://Assets/Houses/kasen_senkai.png"
+dest_files=[ "res://.import/kasen_senkai.png-9ee6a5debcbff776974516c8a62a9d2c.res" ]
+
+[params]
+
+atlas_file="res://Assets/house_atlas.png"
+import_mode=0

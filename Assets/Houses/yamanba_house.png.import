@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/yamanba_house.png-bdc7ae88940905cf84f126ffc1883759.res"
+group_file="res://Assets/house_atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://Assets/Houses/yamanba_house.png"
+dest_files=[ "res://.import/yamanba_house.png-bdc7ae88940905cf84f126ffc1883759.res" ]
+
+[params]
+
+atlas_file="res://Assets/house_atlas.png"
+import_mode=0

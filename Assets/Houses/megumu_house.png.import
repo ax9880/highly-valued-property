@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/megumu_house.png-cfb35fbf6a486b91a6627dfff8127115.res"
+group_file="res://Assets/house_atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://Assets/Houses/megumu_house.png"
+dest_files=[ "res://.import/megumu_house.png-cfb35fbf6a486b91a6627dfff8127115.res" ]
+
+[params]
+
+atlas_file="res://Assets/house_atlas.png"
+import_mode=0

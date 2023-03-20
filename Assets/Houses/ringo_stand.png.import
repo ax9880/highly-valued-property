@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/ringo_stand.png-66c02ae4c8778268f55f9ee4a806c5a4.res"
+group_file="res://Assets/house_atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://Assets/Houses/ringo_stand.png"
+dest_files=[ "res://.import/ringo_stand.png-66c02ae4c8778268f55f9ee4a806c5a4.res" ]
+
+[params]
+
+atlas_file="res://Assets/house_atlas.png"
+import_mode=0

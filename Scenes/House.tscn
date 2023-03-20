@@ -1,0 +1,115 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Scripts/House.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Houses/ringo_stand.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Generated Resources/GravityRegular5.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/UI/ryou.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UI/arrow_up.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/arrow_down.png" type="Texture" id=6]
+[ext_resource path="res://Sounds/ui/house_list.wav" type="AudioStream" id=7]
+[ext_resource path="res://Sounds/ui/house_gone.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/UI/gold_patch.png" type="Texture" id=9]
+[ext_resource path="res://Sounds/ui/house_buy.wav" type="AudioStream" id=10]
+[ext_resource path="res://Sounds/ui/house_loss.wav" type="AudioStream" id=11]
+[ext_resource path="res://Sounds/ui/house_sell.wav" type="AudioStream" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 9 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 60.0
+} ]
+
+[node name="House" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Area2D" type="Area2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
+position = Vector2( 8, 9 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -2.0
+margin_top = 24.0
+margin_right = 18.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 3 )
+text = "99999"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Label"]
+show_behind_parent = true
+margin_left = -17.0
+margin_top = -10.0
+margin_right = 35.0
+margin_bottom = 16.0
+texture = ExtResource( 9 )
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrencySprite" type="Sprite" parent="Label"]
+visible = false
+position = Vector2( 29, 11 )
+texture = ExtResource( 4 )
+
+[node name="ArrowSprite" type="AnimatedSprite" parent="Label"]
+position = Vector2( -5, 2 )
+frames = SubResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="DelistingTimer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="SoundBuy" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 10 )
+volume_db = -1.0
+bus = "SoundEffects"
+
+[node name="SoundSellProfit" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 12 )
+volume_db = -1.0
+bus = "SoundEffects"
+
+[node name="SoundSellLoss" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 11 )
+volume_db = -1.0
+bus = "SoundEffects"
+
+[node name="SoundListHi" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 7 )
+volume_db = -1.0
+bus = "SoundEffects"
+
+[node name="SoundDelistHi" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 8 )
+bus = "SoundEffects"
+
+[connection signal="input_event" from="Sprite/Area2D" to="." method="_on_Area2D_input_event"]
+[connection signal="mouse_entered" from="Sprite/Area2D" to="." method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite/Area2D" to="." method="_on_Area2D_mouse_exited"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
+[connection signal="timeout" from="DelistingTimer" to="." method="_on_DelistingTimer_timeout"]

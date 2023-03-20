@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/aya_house.png-7bfd7f58efc6cff70618594d8e27890f.res"
+group_file="res://Assets/house_atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://Assets/Houses/aya_house.png"
+dest_files=[ "res://.import/aya_house.png-7bfd7f58efc6cff70618594d8e27890f.res" ]
+
+[params]
+
+atlas_file="res://Assets/house_atlas.png"
+import_mode=0

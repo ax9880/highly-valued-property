@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/sannyo_den.png-d034f396d3cf125a5e65e37e88589ddf.res"
+group_file="res://Assets/house_atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://Assets/Houses/sannyo_den.png"
+dest_files=[ "res://.import/sannyo_den.png-d034f396d3cf125a5e65e37e88589ddf.res" ]
+
+[params]
+
+atlas_file="res://Assets/house_atlas.png"
+import_mode=0

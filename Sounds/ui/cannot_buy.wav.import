@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cannot_buy.wav-fc4e6e5575864120248141063374792a.sample"
+
+[deps]
+
+source_file="res://Sounds/ui/cannot_buy.wav"
+dest_files=[ "res://.import/cannot_buy.wav-fc4e6e5575864120248141063374792a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

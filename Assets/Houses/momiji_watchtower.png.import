@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/momiji_watchtower.png-6b6e925fa51ea19471f272659f6fe337.res"
+group_file="res://Assets/house_atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://Assets/Houses/momiji_watchtower.png"
+dest_files=[ "res://.import/momiji_watchtower.png-6b6e925fa51ea19471f272659f6fe337.res" ]
+
+[params]
+
+atlas_file="res://Assets/house_atlas.png"
+import_mode=0

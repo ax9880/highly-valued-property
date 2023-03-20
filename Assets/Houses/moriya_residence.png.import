@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/moriya_residence.png-8b8b698cd45b17b5579fa3e6aaaa668a.res"
+group_file="res://Assets/house_atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://Assets/Houses/moriya_residence.png"
+dest_files=[ "res://.import/moriya_residence.png-8b8b698cd45b17b5579fa3e6aaaa668a.res" ]
+
+[params]
+
+atlas_file="res://Assets/house_atlas.png"
+import_mode=0

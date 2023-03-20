@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/ropeway.png-4fceef8677503bdf69d347ad7e13532c.res"
+group_file="res://Assets/house_atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://Assets/Houses/ropeway.png"
+dest_files=[ "res://.import/ropeway.png-4fceef8677503bdf69d347ad7e13532c.res" ]
+
+[params]
+
+atlas_file="res://Assets/house_atlas.png"
+import_mode=0

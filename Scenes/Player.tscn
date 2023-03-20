@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Sounds/ui/cannot_buy.wav" type="AudioStream" id=2]
+
+[node name="Player" type="Node2D"]
+script = ExtResource( 1 )
+current_money = 1200
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="CannotBuySound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 2 )
+bus = "SoundEffects"

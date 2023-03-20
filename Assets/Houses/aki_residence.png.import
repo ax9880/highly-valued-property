@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/aki_residence.png-875aee154b97ac456cfb0048793b109c.res"
+group_file="res://Assets/house_atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://Assets/Houses/aki_residence.png"
+dest_files=[ "res://.import/aki_residence.png-875aee154b97ac456cfb0048793b109c.res" ]
+
+[params]
+
+atlas_file="res://Assets/house_atlas.png"
+import_mode=0

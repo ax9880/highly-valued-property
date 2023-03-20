@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/great_toad_pond.png-eab91806a19d5bc80ab03c7b8e4459ce.res"
+group_file="res://Assets/house_atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://Assets/Houses/great_toad_pond.png"
+dest_files=[ "res://.import/great_toad_pond.png-eab91806a19d5bc80ab03c7b8e4459ce.res" ]
+
+[params]
+
+atlas_file="res://Assets/house_atlas.png"
+import_mode=0
