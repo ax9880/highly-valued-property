@@ -46,7 +46,7 @@ var assets = 0
 # -----------------------------------------------------------------------------#
 # Initialization
 # -----------------------------------------------------------------------------#
-func _ready():
+func _ready() -> void:
 	randomize()
 	
 	for mountain_floor in $Floors.get_children():
@@ -95,14 +95,14 @@ func _process(_delta: float) -> void:
 	player_money_label.set_text("%s:\n%4d" % [tr("MONEY"), player.current_money])
 
 
-func _on_mouse_house_hover(id: String):
+func _on_mouse_house_hover(id: String) -> void:
 	$Control/HouseNameLabel.text = house_names_dict[id]
 
 
 # -----------------------------------------------------------------------------#
 # Win condition
 # -----------------------------------------------------------------------------#
-func _on_player_buy_mountain():
+func _on_player_buy_mountain() -> void:
 	_pause_game_loop()
 	
 	assets = _get_player_assets()
@@ -118,7 +118,7 @@ func _on_player_buy_mountain():
 	$Tween.start()
 
 
-func _pause_game_loop():
+func _pause_game_loop() -> void:
 	# Play sound
 	# Fade out music
 	# Disable nodes
@@ -176,31 +176,31 @@ func add_house_to_queue(house, shuffle : bool = false):
 			queue.push_back(queue.pop_front())
 
 
-func _on_action_delay_timers(_price_range : String):
+func _on_action_delay_timers(_price_range: String) -> void:
 	# Used to delay the timers that belonged to the other groups
 	# Now it just delays all timers
 	delay_other_timers($Timers.get_children())
 
 
-func _on_house_bought(house):
+func _on_house_bought(house) -> void:
 	_on_action_delay_timers(house.price_range)
 	
 	if house.id == "mountain":
 		_on_player_buy_mountain()
 
 
-func _on_house_delisted(house):
+func _on_house_delisted(house) -> void:
 	add_house_to_queue(house, true)
 	
 	_on_action_delay_timers(house.price_range)
 
 
-func _on_LoTimer_timeout():
+func _on_LoTimer_timeout() -> void:
 	list_enqueued_house(low_price_range_queue, low_queue_minimum_size,
 		$Timers/LoTimer, low_timer_wait_time, [$Timers/HighTimer, $Timers/MidTimer])
 
 
-func _on_MidTimer_timeout():
+func _on_MidTimer_timeout() -> void:
 	list_enqueued_house(mid_price_range_queue, low_queue_minimum_size,
 		$Timers/MidTimer, mid_timer_wait_time, [$Timers/HighTimer, $Timers/LoTimer])
 
@@ -246,10 +246,10 @@ func _on_Tween_tween_all_completed() -> void:
 
 
 # Win score screen
-func _show_score_screen():
-	$Control/ScoreUI/Win/NumberText/Assets.text = str(assets)
-	$Control/ScoreUI/Win/NumberText/Money.text = str($Player.current_money)
-	$Control/ScoreUI/Win/NumberText/Total.text = str($Player.current_money + assets)
+func _show_score_screen() -> void:
+	$Control/CanvasLayer/ScoreUI/Win/NumberText/Assets.text = str(assets)
+	$Control/CanvasLayer/ScoreUI/Win/NumberText/Money.text = str($Player.current_money)
+	$Control/CanvasLayer/ScoreUI/Win/NumberText/Total.text = str($Player.current_money + assets)
 	
 	var time_elapsed = $Control/CountdownTimer/Timer.wait_time - $Control/CountdownTimer/Timer.time_left
 	
@@ -262,10 +262,10 @@ func _show_score_screen():
 	# an extra second and it might confuse the player
 	var seconds = int(ceil(time_elapsed)) % 60
 	
-	$Control/ScoreUI/Win/NumberText/Time.text = "%02d:%02d" % [minutes, seconds]
+	$Control/CanvasLayer/ScoreUI/Win/NumberText/Time.text = "%02d:%02d" % [minutes, seconds]
 	
-	$Control/ScoreUI/Win.show()
-	$Control/ScoreUI.show()
+	$Control/CanvasLayer/ScoreUI/Win.show()
+	$Control/CanvasLayer/ScoreUI.show()
 
 
 func _get_player_assets() -> int:
@@ -295,6 +295,6 @@ func _on_CountdownTimer_timeout() -> void:
 	$Sounds/BgMusicPlayer.stop()
 	$Sounds/GameOver.play()
 	
-	$Control/ScoreUI/GameOver.show()
+	$Control/CanvasLayer/ScoreUI/GameOver.show()
 	
-	$Control/ScoreUI.show()
+	$Control/CanvasLayer/ScoreUI.show()
