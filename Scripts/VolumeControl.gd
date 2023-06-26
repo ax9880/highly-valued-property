@@ -3,21 +3,22 @@ extends Control
 var on_color : Color = Color(1, 1, 1)
 var off_color : Color = Color(0.5, 0.5, 0.5)
 
-var sfx_bus = "SoundEffects"
-var music_bus = "Master" # TODO: Move Music to a separate bus. This mutes SFX and music
+var sfx_bus := "SoundEffects"
+var music_bus := "Master" # TODO: Move Music to a separate bus. This mutes SFX and music
 
-func _ready():
+
+func _ready() -> void:
 	_toggle_sounds(Settings.sfx_on, $SfxButton, sfx_bus)
 	_toggle_sounds(Settings.music_on, $MusicButton, music_bus)
 
 
-func _on_SfxButton_pressed():
+func _on_SfxButton_pressed() -> void:
 	Settings.sfx_on = !Settings.sfx_on
 	
 	_toggle_sounds(Settings.sfx_on, $SfxButton, sfx_bus)
 
 
-func _on_MusicButton_pressed():
+func _on_MusicButton_pressed() -> void:
 	Settings.music_on = !Settings.music_on
 	
 	_toggle_sounds(Settings.music_on, $MusicButton, music_bus)

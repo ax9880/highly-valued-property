@@ -12,7 +12,7 @@ export var end_x = 400
 var frame = 0
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	start_movement()
 
 
@@ -20,7 +20,7 @@ func _on_Tween_tween_completed(_object, _key):
 	start_movement()
 
 
-func start_movement():
+func start_movement() -> void:
 	$Sprite.frame = rand_range(0, 7)
 	
 	self.position = Vector2(start_x, rand_range(min_y, max_y))

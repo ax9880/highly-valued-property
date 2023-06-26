@@ -8,7 +8,7 @@ var owned_houses : Dictionary = {}
 signal execute_order(id, order, profit)
 
 
-func _on_house_click(id, _status, current_price):
+func _on_house_click(id: String, _status: int, current_price: int) -> void:
 	print("[Player]: House clicked! " + id)
 	
 	print("[Player]: Owned houses: ")

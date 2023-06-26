@@ -12,7 +12,7 @@ export var end_x = 400
 var frame
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	$AnimatedSprite.play()
 	
 	start_movement()
@@ -22,7 +22,7 @@ func _on_Tween_tween_completed(_object, _key):
 	start_movement()
 
 
-func start_movement():
+func start_movement() -> void:
 	self.position = Vector2(start_x, rand_range(min_y, max_y))
 	
 	$Tween.interpolate_property(self, "position",

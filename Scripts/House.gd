@@ -67,7 +67,7 @@ var price_func_ref
 # -----------------------------------------------------------------------------#
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	delist_house()
 	
 	price_amplitude = (max_price - min_price) / 2
@@ -81,9 +81,11 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(delta: float) -> void:
 	if listing_status == HouseStatus.Listing.delisting:
 		return
+	
+	_update_house_price(delta)
 	
 	price_label.text = "%4d" % current_price
 	
@@ -94,14 +96,12 @@ func _process(delta):
 		# Price is going up
 		arrow_sprite.frame = 1
 	# if prices are the same, don't touch the arrow
-	
-	_update_house_price(delta)
 
 
 # -----------------------------------------------------------------------------#
 # Price function
 # -----------------------------------------------------------------------------#
-func _update_house_price(delta: float):
+func _update_house_price(delta: float) -> void:
 	elapsed_time += delta * current_time_modifier
 	
 	previous_price = current_price
@@ -109,46 +109,46 @@ func _update_house_price(delta: float):
 	current_price = _price_function(elapsed_time, price_amplitude, base_price, price_mid_point)
 
 
-func _price_function(time, amplitude, x_offset, y_offset):
+func _price_function(time, amplitude, x_offset, y_offset) -> int:
 	# A * sin(w * t) + b
 	return int(amplitude * price_func_ref.call_func(time + x_offset) + y_offset)
 
 
-func _average(a, b):
+func _average(a, b) -> float:
 	return (a + b) / 2
 
 
 # -----------------------------------------------------------------------------#
 # Periodic functions for price_function
 # -----------------------------------------------------------------------------#
-func sine(x):
+func sine(x) -> float:
 	return sin(x)
 
 
-func cosine(x):
+func cosine(x) -> float:
 	return cos(x)
 	
 
-func minus_cosine(x):
+func minus_cosine(x) -> float:
 	return -cos(x)
 	
 
-func sine_dot_cosine(x):
+func sine_dot_cosine(x) -> float:
 	return sin(x) * cos(x)
 	
 	
-func sine_2(x):
+func sine_2(x) -> float:
 	return 0.5 * (sin(x) + sin(x/2))
 	
 	
-func sine_3(x):
+func sine_3(x) -> float:
 	return  0.3 * (sin(x) + sin(2*x) + sin(3*x))
 
 
 # -----------------------------------------------------------------------------#
 # Signals
 # -----------------------------------------------------------------------------#
-func _on_Area2D_input_event(_viewport, _event, _shape_idx):
+func _on_Area2D_input_event(_viewport, _event, _shape_idx) -> void:
 	if not is_listed():
 		return
 	
@@ -167,7 +167,7 @@ func _on_Area2D_input_event(_viewport, _event, _shape_idx):
 		click_time = OS.get_ticks_msec()
 
 
-func _execute_order(house_id, order, profit = 0):
+func _execute_order(house_id, order, profit = 0) -> void:
 	if not is_listed():
 		return
 	
@@ -189,7 +189,7 @@ func _execute_order(house_id, order, profit = 0):
 # -----------------------------------------------------------------------------#
 # Buying and selling
 # -----------------------------------------------------------------------------#
-func _buy_house():
+func _buy_house() -> void:
 	$Sprite.modulate = owned_color
 	
 	$Sounds/SoundBuy.play()
@@ -208,7 +208,7 @@ func _buy_house():
 	emit_signal("bought", self)
 
 
-func _sell_house(profit):
+func _sell_house(profit) -> void:
 	$Sprite.modulate = highlighted_color
 	
 	status = HouseStatus.Ownership.not_owned
@@ -238,11 +238,11 @@ func _sell_house(profit):
 # -----------------------------------------------------------------------------#
 # Listing and delisting
 # -----------------------------------------------------------------------------#
-func is_listed():
+func is_listed() -> bool:
 	return listing_status == HouseStatus.Listing.listed
 
 
-func list_house():
+func list_house() -> void:
 	if randf() < 0.5:
 		func_ref = "sine"
 	else:
@@ -279,7 +279,7 @@ func list_house():
 	set_process(true)
 
 
-func delist_house():
+func delist_house() -> void:
 	if listing_status != HouseStatus.Listing.delisting:
 		$Label.hide()
 		listing_status = HouseStatus.Listing.not_listed
@@ -297,7 +297,7 @@ func delist_house():
 # Automatic delisting
 # -----------------------------------------------------------------------------#
 
-func _on_DelistingTimer_timeout():
+func _on_DelistingTimer_timeout() -> void:
 	tween.interpolate_property(self, "current_time_modifier",
 			null, 0, 2,
 			Tween.TRANS_SINE, Tween.EASE_IN_OUT)
@@ -305,7 +305,7 @@ func _on_DelistingTimer_timeout():
 	tween.start()
 
 
-func _on_Tween_tween_completed(_object, key):
+func _on_Tween_tween_completed(_object: Object, key: String) -> void:
 	if key == ":current_time_modifier":
 		delist_house()
 		$Sounds/SoundDelistHi.play()
@@ -316,14 +316,14 @@ func _on_Tween_tween_completed(_object, key):
 # -----------------------------------------------------------------------------#
 # Disabling node
 # -----------------------------------------------------------------------------#
-func disable():
+func disable() -> void:
 	$DelistingTimer.set_paused(true)
 	set_process(false)
 
 # -----------------------------------------------------------------------------#
 # House highlighting
 # -----------------------------------------------------------------------------#
-func _on_Area2D_mouse_entered():
+func _on_Area2D_mouse_entered() -> void:
 	"""Highlights a house to show that you can buy or sell it"""
 	emit_signal("mouse_on_house", id)
 	
@@ -334,7 +334,7 @@ func _on_Area2D_mouse_entered():
 		self.modulate = highlighted_color
 
 
-func _on_Area2D_mouse_exited():
+func _on_Area2D_mouse_exited() -> void:
 	"""Resets house color to normal one after the mouse has left its general area"""
 	if listing_status == HouseStatus.Listing.not_listed:
 		return
