@@ -15,7 +15,6 @@ atlas = ExtResource( 7 )
 region = Rect2( 132, 228, 56, 27 )
 
 [node name="Node2D" type="Node2D"]
-position = Vector2( 1, 0 )
 script = ExtResource( 5 )
 
 [node name="BG" type="Sprite" parent="."]
@@ -30,11 +29,12 @@ texture = ExtResource( 8 )
 position = Vector2( 254, 110 )
 texture = SubResource( 2 )
 
-[node name="Music" type="Node2D" parent="."]
+[node name="Music" type="Node" parent="."]
 
 [node name="SongStart" type="AudioStreamPlayer" parent="Music"]
 volume_db = -9.0
 autoplay = true
+bus = "Music"
 
 [node name="ClickEffect" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource( 6 )
@@ -67,22 +67,16 @@ margin_bottom = 141.0
 custom_fonts/font = ExtResource( 1 )
 text = "EXPLANATION"
 autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Toggle" type="Label" parent="Control"]
-margin_left = 174.0
-margin_top = 300.0
-margin_right = 270.0
-margin_bottom = 309.0
+margin_left = 174.132
+margin_top = 299.47
+margin_right = 270.132
+margin_bottom = 308.47
 custom_fonts/font = ExtResource( 1 )
 text = "TOGGLE"
 align = 2
 autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="CreditsLabel" type="Label" parent="Control"]
 modulate = Color( 0.721569, 0.756863, 0.835294, 1 )
@@ -155,7 +149,6 @@ text = "English"
 items = [ "English", null, false, 0, null, "Español", null, false, 1, null ]
 selected = 0
 __meta__ = {
-"_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 

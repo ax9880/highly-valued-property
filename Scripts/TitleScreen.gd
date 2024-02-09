@@ -8,8 +8,11 @@ var language_es_index = 1
 func _ready() -> void:
 	if TranslationServer.get_locale() == "en":
 		$Control/LanguageOptions.select(language_en_index)
-	elif TranslationServer.get_locale() == "es":
+	elif TranslationServer.get_locale().begins_with("es"):
 		$Control/LanguageOptions.select(language_es_index)
+	
+	if OS.get_name() == "HTML5":
+		$Control/QuitButton.hide()
 
 
 func _on_StartButton_pressed() -> void:
