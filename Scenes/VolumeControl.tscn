@@ -13,9 +13,6 @@ region = Rect2( 224, 0, 16, 16 )
 
 [node name="VolumeControl" type="Control"]
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="SfxButton" type="TextureButton" parent="."]
 margin_left = 16.0
@@ -32,6 +29,7 @@ margin_left = -3.0
 margin_top = -3.0
 margin_right = 13.0
 margin_bottom = 13.0
+disabled = true
 texture_normal = SubResource( 2 )
 
 [connection signal="pressed" from="SfxButton" to="." method="_on_SfxButton_pressed"]
