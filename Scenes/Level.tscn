@@ -808,7 +808,6 @@ margin_bottom = -1.0
 frame = 1
 
 [node name="UIFrame" type="Sprite" parent="."]
-position = Vector2( 1, 0 )
 texture = ExtResource( 31 )
 centered = false
 
