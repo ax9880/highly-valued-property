@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://Scenes/House.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -68,21 +68,21 @@
 0/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=26]
-extents = Vector2( 8.5, 8.5 )
+extents = Vector2( 9.16667, 10.5 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 22 )
 region = Rect2( 0, 0, 48, 48 )
 
 [sub_resource type="RectangleShape2D" id=25]
-extents = Vector2( 8.4, 8.91304 )
+extents = Vector2( 10, 9.78261 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 22 )
 region = Rect2( 128, 0, 48, 64 )
 
 [sub_resource type="RectangleShape2D" id=24]
-extents = Vector2( 8.18182, 9.38338 )
+extents = Vector2( 9.0909, 9.83021 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 22 )
@@ -93,119 +93,122 @@ atlas = ExtResource( 22 )
 region = Rect2( 48, 96, 32, 48 )
 
 [sub_resource type="RectangleShape2D" id=29]
-extents = Vector2( 8.35821, 9.04737 )
+extents = Vector2( 10.1493, 10.3779 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 22 )
 region = Rect2( 0, 96, 48, 48 )
 
 [sub_resource type="RectangleShape2D" id=27]
-extents = Vector2( 7.65957, 9.48317 )
+extents = Vector2( 11.0638, 9.48317 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 22 )
 region = Rect2( 48, 64, 48, 32 )
 
 [sub_resource type="RectangleShape2D" id=31]
-extents = Vector2( 8.14815, 9.14286 )
+extents = Vector2( 8.33333, 11.7143 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 22 )
 region = Rect2( 48, 0, 16, 48 )
 
 [sub_resource type="RectangleShape2D" id=30]
-extents = Vector2( 8, 8.91892 )
+extents = Vector2( 12, 10.8108 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 22 )
 region = Rect2( 80, 96, 48, 48 )
 
 [sub_resource type="RectangleShape2D" id=32]
-extents = Vector2( 9.17852, 9.3633 )
+extents = Vector2( 9.17852, 10.9684 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 22 )
 region = Rect2( 0, 144, 48, 48 )
 
 [sub_resource type="RectangleShape2D" id=28]
-extents = Vector2( 8.08152, 9.00423 )
+extents = Vector2( 8.78426, 9.5339 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 22 )
 region = Rect2( 48, 144, 32, 32 )
 
 [sub_resource type="RectangleShape2D" id=33]
-extents = Vector2( 8.25206, 9.487 )
+extents = Vector2( 10.8777, 12.6493 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 22 )
 region = Rect2( 80, 144, 32, 40 )
 
 [sub_resource type="RectangleShape2D" id=34]
-extents = Vector2( 8.54244, 9.7629 )
+extents = Vector2( 9.61024, 10.8089 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 22 )
 region = Rect2( 128, 192, 48, 32 )
 
 [sub_resource type="RectangleShape2D" id=35]
-extents = Vector2( 12.572, 10.7639 )
+extents = Vector2( 12.572, 11.8056 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 22 )
 region = Rect2( 16, 200, 32, 40 )
 
 [sub_resource type="RectangleShape2D" id=36]
-extents = Vector2( 8.30189, 9.04069 )
+extents = Vector2( 10.566, 10.5475 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 22 )
 region = Rect2( 0, 200, 16, 24 )
 
 [sub_resource type="RectangleShape2D" id=37]
-extents = Vector2( 8.44391, 9.68014 )
+extents = Vector2( 15.6815, 13.8889 )
 
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 22 )
 region = Rect2( 48, 216, 32, 40 )
 
 [sub_resource type="RectangleShape2D" id=38]
-extents = Vector2( 9.0566, 8.53842 )
+extents = Vector2( 11.3208, 10.5475 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 22 )
 region = Rect2( 80, 184, 48, 56 )
 
 [sub_resource type="RectangleShape2D" id=39]
-extents = Vector2( 8.4, 9.4 )
+extents = Vector2( 8.4, 9.8 )
 
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 22 )
 region = Rect2( 48, 184, 32, 24 )
 
 [sub_resource type="RectangleShape2D" id=40]
-extents = Vector2( 11, 10 )
+extents = Vector2( 15, 15.5 )
 
 [sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 22 )
 region = Rect2( 128, 120, 48, 40 )
 
 [sub_resource type="RectangleShape2D" id=41]
-extents = Vector2( 8.71873, 8.62896 )
+extents = Vector2( 8.71873, 9.58773 )
 
 [sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 22 )
 region = Rect2( 128, 224, 64, 32 )
 
 [sub_resource type="RectangleShape2D" id=42]
-extents = Vector2( 8.07382, 9.64974 )
+extents = Vector2( 8.36217, 11.4367 )
 
 [sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 22 )
 region = Rect2( 144, 160, 32, 32 )
 
 [sub_resource type="RectangleShape2D" id=43]
-extents = Vector2( 8.46963, 8.94569 )
+extents = Vector2( 9.63785, 11.5016 )
+
+[sub_resource type="RectangleShape2D" id=44]
+extents = Vector2( 12, 18 )
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 3 )
@@ -328,7 +331,7 @@ min_price = 3800
 texture = SubResource( 4 )
 
 [node name="CollisionShape2D" parent="Floors/Floor6/ShiningNeedleCastle/Sprite/Area2D" index="0"]
-position = Vector2( 24, 32.5 )
+position = Vector2( 24, 31 )
 scale = Vector2( 2.2, 3.357 )
 shape = SubResource( 24 )
 
@@ -355,7 +358,7 @@ position = Vector2( -8, -12 )
 texture = SubResource( 5 )
 
 [node name="CollisionShape2D" parent="Floors/Floor5/MegumuHouse/Sprite/Area2D" index="0"]
-position = Vector2( 24, 31 )
+position = Vector2( 24, 32.655 )
 scale = Vector2( 2, 1.87 )
 
 [node name="Label" parent="Floors/Floor5/MegumuHouse" index="1"]
@@ -379,7 +382,7 @@ position = Vector2( 0, -18 )
 texture = SubResource( 7 )
 
 [node name="CollisionShape2D" parent="Floors/Floor5/HatateHouse/Sprite/Area2D" index="0"]
-position = Vector2( 14, 31 )
+position = Vector2( 14, 33.5 )
 scale = Vector2( 1.675, 1.879 )
 shape = SubResource( 29 )
 
@@ -406,7 +409,7 @@ position = Vector2( -12, -13 )
 texture = SubResource( 8 )
 
 [node name="CollisionShape2D" parent="Floors/Floor4/AyaHouse/Sprite/Area2D" index="0"]
-position = Vector2( 24, 28 )
+position = Vector2( 25, 28 )
 scale = Vector2( 1.175, 2.109 )
 shape = SubResource( 27 )
 
@@ -431,7 +434,7 @@ position = Vector2( -2, -1 )
 texture = SubResource( 11 )
 
 [node name="CollisionShape2D" parent="Floors/Floor4/KutakaHouse/Sprite/Area2D" index="0"]
-position = Vector2( 24, 16 )
+position = Vector2( 23.5, 12.5 )
 scale = Vector2( 2.7, 1.75 )
 shape = SubResource( 31 )
 
@@ -455,7 +458,7 @@ position = Vector2( 0, -21 )
 texture = SubResource( 9 )
 
 [node name="CollisionShape2D" parent="Floors/Floor4/MomijiWatchtower/Sprite/Area2D" index="0"]
-position = Vector2( 8, 31.5 )
+position = Vector2( 8, 33 )
 scale = Vector2( 1, 1.85 )
 shape = SubResource( 30 )
 
@@ -478,7 +481,7 @@ position = Vector2( -5, -15 )
 texture = SubResource( 10 )
 
 [node name="CollisionShape2D" parent="Floors/Floor4/Onsen/Sprite/Area2D" index="0"]
-position = Vector2( 25, 31.5 )
+position = Vector2( 25, 28.5 )
 scale = Vector2( 2.179, 1.869 )
 shape = SubResource( 32 )
 
@@ -505,7 +508,7 @@ position = Vector2( -2, -20 )
 texture = SubResource( 12 )
 
 [node name="CollisionShape2D" parent="Floors/Floor3/SannyoDen/Sprite/Area2D" index="0"]
-position = Vector2( 24, 31 )
+position = Vector2( 24, 32 )
 scale = Vector2( 2.846, 1.888 )
 shape = SubResource( 28 )
 
@@ -528,7 +531,7 @@ position = Vector2( -5, -10 )
 texture = SubResource( 13 )
 
 [node name="CollisionShape2D" parent="Floors/Floor3/DragonMine/Sprite/Area2D" index="0"]
-position = Vector2( 16, 17.5 )
+position = Vector2( 16.5, 18 )
 scale = Vector2( 1.333, 1.423 )
 shape = SubResource( 33 )
 
@@ -552,7 +555,7 @@ position = Vector2( 0, -13 )
 texture = SubResource( 14 )
 
 [node name="CollisionShape2D" parent="Floors/Floor3/NitoriHouse/Sprite/Area2D" index="0"]
-position = Vector2( 16, 20 )
+position = Vector2( 16, 18.5 )
 scale = Vector2( 1.873, 1.434 )
 shape = SubResource( 34 )
 
@@ -576,7 +579,7 @@ position = Vector2( 0, -7 )
 texture = SubResource( 15 )
 
 [node name="CollisionShape2D" parent="Floors/Floor3/GreatToadPond/Sprite/Area2D" index="0"]
-position = Vector2( 24, 16.5 )
+position = Vector2( 24, 15 )
 scale = Vector2( 1.909, 1.44 )
 shape = SubResource( 35 )
 
@@ -602,7 +605,7 @@ position = Vector2( -5, -9 )
 texture = SubResource( 17 )
 
 [node name="CollisionShape2D" parent="Floors/Floor2/TakaneTent2/Sprite/Area2D" index="0"]
-position = Vector2( 16, 22 )
+position = Vector2( 16, 23 )
 scale = Vector2( 1.325, 1.991 )
 shape = SubResource( 36 )
 
@@ -675,7 +678,7 @@ position = Vector2( -3, -8 )
 texture = SubResource( 19 )
 
 [node name="CollisionShape2D" parent="Floors/Floor2/KasenSenkai/Sprite/Area2D" index="0"]
-position = Vector2( 24, 32.5 )
+position = Vector2( 24, 34.5 )
 scale = Vector2( 2.5, 2.5 )
 shape = SubResource( 39 )
 
@@ -699,7 +702,7 @@ position = Vector2( 0, -9 )
 texture = SubResource( 20 )
 
 [node name="CollisionShape2D" parent="Floors/Floor2/NemunoHouse/Sprite/Area2D" index="0"]
-position = Vector2( 16, 14 )
+position = Vector2( 16, 12.5 )
 shape = SubResource( 40 )
 
 [node name="Label" parent="Floors/Floor2/NemunoHouse" index="1"]
@@ -727,7 +730,7 @@ texture = SubResource( 21 )
 position = Vector2( 14, 6 )
 
 [node name="CollisionShape2D" parent="Floors/Floor1/Ropeway/Sprite/Area2D" index="0"]
-position = Vector2( 11, 16 )
+position = Vector2( 11, 18 )
 scale = Vector2( 2.638, 2.086 )
 shape = SubResource( 41 )
 
@@ -752,7 +755,7 @@ position = Vector2( -4, -10 )
 texture = SubResource( 22 )
 
 [node name="CollisionShape2D" parent="Floors/Floor1/ChimataMarket/Sprite/Area2D" index="0"]
-position = Vector2( 32, 17.5 )
+position = Vector2( 32, 19 )
 scale = Vector2( 3.468, 1.399 )
 shape = SubResource( 42 )
 
@@ -797,6 +800,10 @@ min_price = 100
 
 [node name="Sprite" parent="Floors/Floor1/RingoStand" index="0"]
 position = Vector2( 0, -12 )
+
+[node name="CollisionShape2D" parent="Floors/Floor1/RingoStand/Sprite/Area2D" index="0"]
+position = Vector2( 8, 10 )
+shape = SubResource( 44 )
 
 [node name="Label" parent="Floors/Floor1/RingoStand" index="1"]
 margin_left = 0.0
