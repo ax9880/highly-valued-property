@@ -163,8 +163,9 @@ func add_house_to_queue(house, shuffle : bool = false):
 		queue = high_price_range_queue
 	else:
 		print("[Level]: Unknown price range")
-		return
 		
+		return
+	
 	queue.push_back(house)
 	
 	if shuffle:

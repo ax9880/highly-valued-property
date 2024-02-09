@@ -213,7 +213,6 @@ script = ExtResource( 3 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 visible = false
 position = Vector2( 13, 9 )
-current_money = 99999
 
 [node name="LevelGraphics" type="Node2D" parent="."]
 
@@ -1097,10 +1096,11 @@ autostart = true
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="Sounds" type="Node2D" parent="."]
+[node name="Sounds" type="Node" parent="."]
 
 [node name="BgMusicPlayer" type="AudioStreamPlayer" parent="Sounds"]
 volume_db = -8.0
+bus = "Music"
 
 [node name="BuyMountain" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 36 )
