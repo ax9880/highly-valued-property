@@ -90,8 +90,7 @@ frames = SubResource( 2 )
 wait_time = 15.0
 one_shot = true
 
-[node name="Sounds" type="Node2D" parent="."]
-visible = false
+[node name="Sounds" type="Node" parent="."]
 
 [node name="SoundBuy" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 10 )

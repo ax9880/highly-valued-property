@@ -148,11 +148,11 @@ func sine_3(x) -> float:
 # -----------------------------------------------------------------------------#
 # Signals
 # -----------------------------------------------------------------------------#
-func _on_Area2D_input_event(_viewport, _event, _shape_idx) -> void:
+func _on_Area2D_input_event(_viewport, event, _shape_idx) -> void:
 	if not is_listed():
 		return
 	
-	if (Input.is_action_just_pressed("ui_select")):
+	if event is InputEventMouseButton and event.pressed:
 		# Comparing it to the exact millisecond seems too tight, but
 		# it works fine in this case
 		# I'm unsure why this happens
@@ -323,8 +323,8 @@ func disable() -> void:
 # -----------------------------------------------------------------------------#
 # House highlighting
 # -----------------------------------------------------------------------------#
+# Highlights a house to show that you can buy or sell it
 func _on_Area2D_mouse_entered() -> void:
-	"""Highlights a house to show that you can buy or sell it"""
 	emit_signal("mouse_on_house", id)
 	
 	if listing_status == HouseStatus.Listing.not_listed:
@@ -334,8 +334,8 @@ func _on_Area2D_mouse_entered() -> void:
 		self.modulate = highlighted_color
 
 
+# Resets house color to normal one after the mouse has left its general area
 func _on_Area2D_mouse_exited() -> void:
-	"""Resets house color to normal one after the mouse has left its general area"""
 	if listing_status == HouseStatus.Listing.not_listed:
 		return
 	
