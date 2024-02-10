@@ -269,12 +269,12 @@ func list_house() -> void:
 	
 	$Sounds/SoundListHi.play()
 	
-	listing_status = HouseStatus.Listing.listed	
+	listing_status = HouseStatus.Listing.listed
 	
 	delisting_timer.start()
 	
 	base_price = 0
-	elapsed_time = 0 # this?
+	elapsed_time = elapsed_time * randf()
 	
 	set_process(true)
 
