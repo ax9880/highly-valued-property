@@ -78,6 +78,8 @@ func _ready() -> void:
 	base_price = rand_range(min_price, max_price)
 	
 	current_price = base_price
+	
+	elapsed_time = randf() * 15.0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
