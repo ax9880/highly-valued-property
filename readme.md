@@ -8,6 +8,8 @@ The source code files (.gd, .tres) files belonging to this project are licensed 
 
 All graphics and sounds are licensed under the [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) license.
 
+[Gravity Pixel Font Pack](https://jotson.itch.io/gravity-pixel-font) by jotson, edited to add some accents.
+
 ## Credits
 
 - [illusorybread / ax9880](https://illusorybread.itch.io/): Programming, art, sounds.
